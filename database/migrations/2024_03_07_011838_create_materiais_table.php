@@ -16,10 +16,10 @@ return new class extends Migration
             $table->string('nome')-> unique();   
             $table->text('descricao');
             $table->integer('qtd')-> default(1);
-            $table->string('imagem')-> nullable;
+            $table->string('imagem')-> nullable();
            
             $table->unisignedBigInterger('id_user');
-            $table->foreign('id_user')->references ('id') ->on ('users')->onDelete()-> onUpdate('cascade');
+            $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             
             $table->timestamps();
         });
