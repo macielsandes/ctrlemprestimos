@@ -34,7 +34,7 @@ class MaterialController extends Controller
      {
          //$user = User::where ('id',$id) ->first();
          if(!$material= Material::find($id))
-            return redirect() -> route('materials.index');
+            return redirect() -> route('materiais.index');
  
          //se for passado um ID de um material valido, direciona para a tela de edição de usuario
          return view('materiais.show', compact('material'));

@@ -21,4 +21,9 @@ class Material extends Model
 
         return $materials;
     }
+    //liga o modelo a muitos para muitos
+    public function emprestimos()
+    {
+        return $this->belongsToMany(User::class);
+    }
 }

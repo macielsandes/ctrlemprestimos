@@ -16,11 +16,17 @@ return new class extends Migration
             $table->string('nome')-> unique();   
             $table->text('descricao');
             $table->integer('qtd')-> default(1);
-            $table->string('imagem')-> nullable();
-           
-            $table->unisignedBigInterger('id_user');
-            $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
-            
+            $table->string('imagem')-> nullable();                    
+            $table->timestamps();
+        });
+
+        Schema::create('emprestimos_materiais', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->unsignedBigInteger('material_id');           
+            $table->foreign('material_id')->references('id')->on('materiais');
+            $table-> boolean('active')->default(true);
             $table->timestamps();
         });
     }
@@ -30,6 +36,7 @@ return new class extends Migration
      */
     public function down(): void
     {
+        Schema::dropIfExists('emprestimos_materiais');
         Schema::dropIfExists('materiais');
     }
 };
