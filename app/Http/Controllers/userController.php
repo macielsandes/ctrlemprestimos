@@ -2,18 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreUpdateUserFormRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 
-/**
- * This class controls all actions related to material for
- * the CTRLEmprestimos application.
- *
- * @version    v1.2
- * @author [Maciel Sandes] 
- */
-
-class userController extends Controller
+class UserController extends Controller
 {
     protected $model;
 
@@ -26,7 +19,12 @@ class userController extends Controller
     //Controle que direciona para pagina inicial de usuario
     public function index(Request $request)
     {
-        return view ('users.index');
+        $users = $this->model
+                ->getUsers(
+                    search: $request ->search ?? ''
+                );
+        
+        return view ('users.index', compact('users'));
     }
     
     //controle para mostrar usuario

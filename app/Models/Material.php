@@ -21,6 +21,14 @@ class Material extends Model
 
         return $materials;
     }
+
+    /*public function User()
+    {
+        return $this->BelongsTo(User::class);
+    }*/
+    
+
+    
     //liga o modelo a muitos para muitos
     public function emprestimos()
     {

@@ -26,14 +26,13 @@ Route::get('/user/create', [UserController::class, 'create']) -> name('users.cre
 Route::post('/user', [UserController::class, 'store']) -> name('users.store');
 Route::get('/user/{id}', [UserController::class, 'show'])-> name('users.show');
 
-
-Route::delete('/material{id}',[MaterialController::class, 'destroy']) -> name('materiais.destroy');
-Route::put('/material/{id}',[MaterialController::class, 'update']) -> name('materiais.update');
-Route::get('/material/{id}/edit', [MaterialController::class, 'edit'])-> name('materiais.edit');
-Route::get('/material', [MaterialController::class, 'index'])-> name('materiais.index');
-Route::get('/material/create', [MaterialController::class, 'create'])-> name('materiais.create');
-Route::post('/material', [MaterialController::class, 'store'])-> name('materiais.store');
-Route::get('/material/{id}', [MaterialController::class, 'show'])-> name('materiais.show');
+Route::delete('/material{id}',[MaterialController::class, 'destroy']) -> name('materials.destroy');
+Route::put('/material/{id}',[MaterialController::class, 'update']) -> name('materials.update');
+Route::get('/material/{id}/edit', [MaterialController::class, 'edit'])-> name('materials.edit');
+Route::get('/material', [MaterialController::class, 'index'])-> name('materials.index');
+Route::get('/material/create', [MaterialController::class, 'create'])-> name('materials.create');
+Route::post('/material', [MaterialController::class, 'store'])-> name('materials.store');
+Route::get('/material/{id}', [MaterialController::class, 'show'])-> name('materials.show');
 
 Route::get('/', function () {
     return view('welcome');
