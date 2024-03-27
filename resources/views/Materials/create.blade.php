@@ -5,7 +5,7 @@
                 <div class="col">
                     <form action="{{ route('materials.store') }}" method="POST">
                     @csrf
-                    @include('materials.partials.form')
+                    @include('materials._partials.form')
                 </form>
 </div>
 

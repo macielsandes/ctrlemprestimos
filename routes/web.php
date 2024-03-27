@@ -3,9 +3,11 @@
 use App\Http\Controllers\{
     MaterialController,
     UserController,
+    DashboardController,
 };
 
 use Illuminate\Support\Facades\Route;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,6 +35,9 @@ Route::get('/material', [MaterialController::class, 'index'])-> name('materials.
 Route::get('/material/create', [MaterialController::class, 'create'])-> name('materials.create');
 Route::post('/material', [MaterialController::class, 'store'])-> name('materials.store');
 Route::get('/material/{id}', [MaterialController::class, 'show'])-> name('materials.show');
+
+Route::get('/dashboard', [DashboardController::class, 'index'])-> name('dashboards.index');
+
 
 Route::get('/', function () {
     return view('welcome');

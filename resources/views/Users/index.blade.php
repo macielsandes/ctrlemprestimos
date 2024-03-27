@@ -1,7 +1,4 @@
-<div class="container mt-3">
-    <h2>Usuários</h2>   
-</div>
-    <div class="container mt-6 py-3">      
+<h2>Usuários</h2>   
             <div class="row d-flex bd-highlight">               
                 <!--Botao para cadastro de novo usuario-->          
                 <div class="col">          
@@ -15,12 +12,11 @@
                             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>                     
                     </form>
                 </div>
-            </div>
-    </div>
+
 
 <div class="table-responsive">
     <table class="table table-bordered">
-        <caption>Listagem de usuários</caption>
+        <caption>usuários</caption>
             <thead class="table-dark table-striped ">
                     <tr>
                         <th scope="col">Id</th>      
@@ -37,7 +33,8 @@
                         @foreach ($users as $user)                           
                         <tr> 
                             <td> {{ $user->id }}</td>               
-                            <td> {{ $user->name }}</td>
+                            <td> {{ $user->firstName }}</td>
+                            <td> {{ $user->lastName }}</td>
                             <td> {{ $user->email }}</td>
                             <td> Vazio</td> 
                             <td> Vazio</td>                           
@@ -52,17 +49,3 @@
                     </tbody>
     </table>
     </div>
-
-    <div class="container mt-6">
-        <ul class="pagination  justify-content-center">
-            <li class="page-item disabled"><a class="page-link" href="#">Anterior</a></li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item"><a class="page-link" href="#">Próxima</a></li>
-          </ul>
-    </div>
-
-</div>    
-
-@endsection

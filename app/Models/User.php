@@ -42,7 +42,20 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+    
+    // modelo da classe user
+    public function getUsers(string|null $search = null)
+    {
+       $user = $this->where(function ($query) use ($search){
+            if ($search){
+                $query->where('email', $search);
+                $query->orwhere('name', 'LIKE', "%{$search}%");
+            }
+        })->get();    
 
+        return $user;
+    }
+    //modelo muitos para muitos
     public function emprestimos()
     {
         return $this->belongsToMany(Material::class);

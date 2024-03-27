@@ -23,8 +23,8 @@ class UserController extends Controller
                 ->getUsers(
                     search: $request ->search ?? ''
                 );
-        
-        return view ('users.index', compact('users'));
+
+       return view ('users.index', compact('users'));
     }
     
     //controle para mostrar usuario

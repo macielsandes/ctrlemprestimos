@@ -1,5 +1,4 @@
-<div class="container mt-3">
-    <h2>Material</h2>                
+<h2>Material</h2>                
         <!--Botao para cadastro de novo usuario-->          
         <div class="col">          
          <a class="btn btn-primary" href="{{ route('materials.create') }}" role="button">Novo Material</a>          
@@ -10,7 +9,7 @@
             <form class=" d-flex ms-auto p-2 bd-highlight" action="{{ route('materials.index') }}" method="get">
                 <input class="form-control me-2" type="search" name ="search" placeholder="Pesquisar" aria-label="Pesquisar">                        
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>                     
-        </form>
+            </form>
         </div> 
 
 <!--Inicio da Tabela-->
