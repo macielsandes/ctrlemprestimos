@@ -3,6 +3,7 @@
 use App\Http\Controllers\{
     MaterialController,
     UserController,
+    LoanController,
     DashboardController,
 };
 
@@ -35,6 +36,9 @@ Route::get('/material', [MaterialController::class, 'index'])-> name('materials.
 Route::get('/material/create', [MaterialController::class, 'create'])-> name('materials.create');
 Route::post('/material', [MaterialController::class, 'store'])-> name('materials.store');
 Route::get('/material/{id}', [MaterialController::class, 'show'])-> name('materials.show');
+
+Route::get('/loan', [LoanController::class, 'index'])-> name('loands.index');
+Route::get('/many-to-many', [LoanController::class, 'index'])-> name('loands.index');
 
 Route::get('/dashboard', [DashboardController::class, 'index'])-> name('dashboards.index');
 
