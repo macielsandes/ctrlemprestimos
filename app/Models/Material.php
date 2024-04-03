@@ -9,7 +9,13 @@ class Material extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['nome', 'descricao','qtd', 'imagem'];
+    //Model para buscar informações no banco de dados
+    protected $fillable = [
+        'nome', 
+        'descricao',
+        'qtd', 
+        'imagem',
+    ];
 
     public function getMaterials(string|null $search = null)
     {

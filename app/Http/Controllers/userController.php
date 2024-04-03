@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreUpdateUserFormRequest;
+use App\Http\Requests\StoreUpdateUsersFormRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 

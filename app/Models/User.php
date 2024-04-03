@@ -18,7 +18,8 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'firstName',
+        'lastName',
         'email',
         'password',
     ];
@@ -55,6 +56,7 @@ class User extends Authenticatable
 
         return $user;
     }
+    
     //modelo muitos para muitos
     public function usersLoan()
     {

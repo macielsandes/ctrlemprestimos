@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Material;
 use GuzzleHttp\Promise\Create;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,7 @@ class LoanController extends Controller
 
     public function many-to-many()
     {
-        Create
+        dd(Material::create(['boolean' => '1']));
     }
     
 }
