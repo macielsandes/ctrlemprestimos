@@ -1,0 +1,23 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Customer extends Model
+{
+    use HasFactory;
+
+    protected $fillable = [
+        'firstName', 
+        'lastName',
+        'username',
+    ];
+
+    //modelo muitos para muitos
+    public function CustomerLoan()
+    {
+        return $this->belongsToMany(Material::class);
+    }
+}

@@ -57,9 +57,5 @@ class User extends Authenticatable
         return $user;
     }
     
-    //modelo muitos para muitos
-    public function usersLoan()
-    {
-        return $this->belongsToMany(Material::class);
-    }
+    
 }

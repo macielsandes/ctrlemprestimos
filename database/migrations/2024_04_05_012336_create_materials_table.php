@@ -13,20 +13,19 @@ return new class extends Migration
     {
         Schema::create('materials', function (Blueprint $table) {
             $table->id();
-            $table->string('nome')-> unique();   
-            $table->text('descricao');
-            $table->integer('qtd')-> default(1);
+            $table->string('name')-> unique();   
+            $table->text('description');           
             $table->string('imagem')-> nullable();                    
             $table->timestamps();
         });
 
         Schema::create('loan_materials', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->unsignedBigInteger('customer_id');
+            $table->foreign('customer_id')->references('id')->on('customers');
             $table->unsignedBigInteger('material_id');           
             $table->foreign('material_id')->references('id')->on('materials');
-            $table-> boolean('active')->default(true);
+            $table-> boolean('status')->default(true);
             $table->timestamps();
         });
     }
