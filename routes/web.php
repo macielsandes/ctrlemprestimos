@@ -38,8 +38,14 @@ Route::get('/material/create', [MaterialController::class, 'create'])-> name('ma
 Route::post('/material', [MaterialController::class, 'store'])-> name('materials.store');
 Route::get('/material/{id}', [MaterialController::class, 'show'])-> name('materials.show');
 
-
+Route::delete('/customer/{id}',[CustomerController::class, 'destroy']) -> name('customers.destroy');
+Route::put('/customer/{id}',[CustomerController::class, 'update']) -> name('customers.update');
+Route::get('/customer/{id}/edit',[CustomerController::class, 'edit']) -> name('customers.edit');
 Route::get('/customer', [CustomerController::class, 'index'])-> name('customers.index');
+Route::get('/customer/create', [CustomerController::class, 'create']) -> name('customers.create');
+Route::post('/customer', [CustomerController::class, 'store']) -> name('customers.store');
+Route::get('/customer/{id}', [CustomerController::class, 'show'])-> name('customers.show');
+
 
 Route::get('/loan', [LoanController::class, 'index'])-> name('loands.index');
 Route::get('/many-to-many', [LoanController::class, 'index'])-> name('loands.index');
