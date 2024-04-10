@@ -11,9 +11,8 @@ class Material extends Model
 
     //Model para buscar informações no banco de dados
     protected $fillable = [
-        'nome', 
-        'descricao',
-        'qtd', 
+        'name', 
+        'description',
         'imagem',
     ];
 
@@ -21,15 +20,15 @@ class Material extends Model
     {
        $materials = $this->where(function ($query) use ($search){
             if ($search){
-                $query->where('nome', $search);                
+                $query->where('name', $search);                
             }
         })->get();    
 
         return $materials;
     }
 
-    //liga o modelo a muitos para muitos
-    public function MaterialLoans()
+    //O modelo muitos para muitos
+    public function materialLoans()
     {
         return $this->belongsToMany(Customer::class);
     }

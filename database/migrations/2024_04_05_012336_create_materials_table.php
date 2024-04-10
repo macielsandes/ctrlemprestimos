@@ -19,7 +19,7 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        Schema::create('loan_materials', function (Blueprint $table) {
+        Schema::create('loan_material', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('customer_id');
             $table->foreign('customer_id')->references('id')->on('customers');
@@ -35,7 +35,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('loan_materials');
+        Schema::dropIfExists('loan_material');
         Schema::dropIfExists('materials');
     }
 };

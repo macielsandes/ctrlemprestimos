@@ -21,7 +21,6 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
 Route::delete('/user/{id}',[UserController::class, 'destroy']) -> name('users.destroy');
 Route::put('/user/{id}',[UserController::class, 'update']) -> name('users.update');
 Route::get('/user/{id}/edit',[UserController::class, 'edit']) -> name('users.edit');
@@ -47,8 +46,8 @@ Route::post('/customer', [CustomerController::class, 'store']) -> name('customer
 Route::get('/customer/{id}', [CustomerController::class, 'show'])-> name('customers.show');
 
 
-Route::get('/loan', [LoanController::class, 'index'])-> name('loands.index');
-Route::get('/many-to-many', [LoanController::class, 'index'])-> name('loands.index');
+Route::get('/materialLoan', [LoanController::class, 'index'])-> name('loands.index');
+Route::post('/materialloan/{id}', [LoanController::class, 'materialloan']) -> name('loands.loan'); 
 
 Route::get('/dashboard', [DashboardController::class, 'index'])-> name('dashboards.index');
 

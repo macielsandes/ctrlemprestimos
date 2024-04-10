@@ -10,10 +10,10 @@ class Customer extends Model
     use HasFactory;
 
     protected $fillable = [
-        'firstName', 
-        'lastName',
+        'firstname', 
+        'lastname',
         'username',
-        'e-mail',
+        'email',
     ];
 
     // modelo da classe Customer
@@ -30,7 +30,7 @@ class Customer extends Model
     }
 
     //modelo muitos para muitos
-    public function CustomerLoan()
+    public function userLoans()
     {
         return $this->belongsToMany(Material::class);
     }

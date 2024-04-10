@@ -8,7 +8,7 @@
     <label for="LastName" c>Sobrenome:</label>
     <input type="text" name="lastName" id="lastName" value="{{ $customer->lastName ?? old('lastName') }}">
 
-    <label for="Username">Username</label>
+    <label for="Username">Username:</label>
     <input type="text" name="userName" id="userName" value="{{ $customer->username ?? old('username') }}">
 
     <label for="Email">E-mail:</label>

@@ -13,9 +13,9 @@ class LoanController extends Controller
         return view ('loans.index');       
     }
 
-    public function many-to-many()
+    public function materialLoans()
     {
-        dd(Material::create(['boolean' => '1']));
+        
     }
     
 }
