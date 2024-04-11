@@ -10,7 +10,7 @@ class LoanController extends Controller
 {
     public function index(Request $request)
     {      
-        return view ('loans.index');       
+        return view ('loans.index');      
     }
 
     public function materialLoans()
