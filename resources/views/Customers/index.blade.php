@@ -1,3 +1,9 @@
+@extends('Layouts.default')
+
+@section('title', 'Home')
+
+@section('content')
+
 <h2>Clientes</h2>
 <!--Botao para cadastro de novo cliente-->
 <div class="col">
@@ -38,3 +44,4 @@
         </tr>
     @endforeach
 </tbody>
+@endsection

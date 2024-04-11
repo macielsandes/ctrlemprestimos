@@ -1,3 +1,9 @@
+@extends('Layouts.default')
+
+@section('title', 'Home')
+
+@section('content')
+
 <h2>Usuários</h2>
 <div class="row d-flex bd-highlight">
     <!--Botao para cadastro de novo usuario-->
@@ -51,3 +57,4 @@
             </tbody>
         </table>
     </div>
+@endsection
