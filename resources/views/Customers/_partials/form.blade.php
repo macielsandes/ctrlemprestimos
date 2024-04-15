@@ -2,17 +2,17 @@
 <!--Forms de usuario-->
 
 <fieldset>
-    <label for="FirstName">Nome:</label>
-    <input type="text" name="firstName" id="firstName" value="{{ $customer->firstName ?? old('firstName') }}">
+    <label for="firstname">Nome:</label>
+    <input type="text" name="firstname" id="firstname" value="{{ $customer->firstname ?? old('firstname') }}">
 
-    <label for="LastName" c>Sobrenome:</label>
-    <input type="text" name="lastName" id="lastName" value="{{ $customer->lastName ?? old('lastName') }}">
+    <label for="lastname" c>Sobrenome:</label>
+    <input type="text" name="lastname" id="lastname" value="{{ $customer->lastname ?? old('lastname') }}">
 
-    <label for="Username">Username:</label>
-    <input type="text" name="userName" id="userName" value="{{ $customer->username ?? old('username') }}">
+    <label for="username">Username:</label>
+    <input type="text" name="username" id="username" value="{{ $customer->username ?? old('username') }}">
 
-    <label for="Email">E-mail:</label>
-    <input type="email" name="email" id="Email" value="{{ $customer->email ?? old('email') }}">
+    <label for="email">E-mail:</label>
+    <input type="email" name="email" id="email" value="{{ $customer->email ?? old('email') }}">
 </fieldset>
 <div>
     <button type="submit">Salvar</button>

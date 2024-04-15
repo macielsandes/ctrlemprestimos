@@ -1,9 +1,8 @@
 @extends('Layouts.default')
 
-@section('title', 'Materiais')
+@section('title', 'Material')
 
 @section('content')
-
 
     <h2>Material</h2>
     <!--Botao para cadastro de novo usuario-->

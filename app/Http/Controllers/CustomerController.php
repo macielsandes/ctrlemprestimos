@@ -22,7 +22,7 @@ class CustomerController extends Controller
             search: $request ->search ?? ''
         );
         
-        return view ('customers.index', compact ('customers'));       
+        return view ('customers.index', compact ('customer'));       
     }
 
     //controle para mostrar usuario
@@ -32,7 +32,7 @@ class CustomerController extends Controller
            return redirect() -> route('customers.index');
 
         //se for passado um ID de um material valido, direciona para a tela de edição de usuario
-        return view('customers.show', compact('customers'));
+        return view('customers.show', compact('customer'));
     }
     
     public function create()
@@ -40,22 +40,24 @@ class CustomerController extends Controller
        return view('customers.create'); 
     }
     
-    //Enviando dados do formulario para o banco de dados
+    //Recebendo dados do formulario
     public function store(Request $request)
     {                   
         $customer = new Customer();        
+        
         $customer->create($request->all());
+        
         return redirect()-> route ('customers.index');
     }
 
     //Editando um usuário
-    /*public function edit($id)
+    public function edit($id)
     {
         if (!$customer= Customer::find($id))
            return redirect() -> route('customers.index');
 
         return view('customers.edit', compact('customer'));
-    }*/
+    }
     
     //Excluir usuario do dando de dados
     public function destroy($id)
