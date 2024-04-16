@@ -5,7 +5,7 @@
     <label for="firstname">Nome:</label>
     <input type="text" name="firstname" id="firstname" value="{{ $customer->firstname ?? old('firstname') }}">
 
-    <label for="lastname" c>Sobrenome:</label>
+    <label for="lastname">Sobrenome:</label>
     <input type="text" name="lastname" id="lastname" value="{{ $customer->lastname ?? old('lastname') }}">
 
     <label for="username">Username:</label>

@@ -1,10 +1,11 @@
 @extends('Layouts.default')
 
-@section('title', 'Cliente')
+@section('title', 'Clientes')
 
 @section('content')
 
     <h2>Clientes</h2>
+    
     <!--Botao para cadastro de novo cliente-->
     <div class="col">
         <a class="btn btn-primary" href="{{ route('customers.create') }}" role="button">Novo cliente</a>
@@ -15,7 +16,7 @@
         <thead class="table-dark table-striped ">
             <tr>
                 <th scope="col">Id</th>
-                <th scope="col">Nome</th>
+                <th scope="col">Primeiro Nome</th>
                 <th scope="col">Ultimo Nome</th>
                 <th scope="col">username</th>
                 <th scope="col">email</th>
@@ -29,8 +30,8 @@
             @foreach ($customers as $customer)
                 <tr>
                     <td> {{ $customer->id }}</td>
-                    <td> {{ $customer->firstName }}</td>
-                    <td> {{ $customer->lastName }}</td>
+                    <td> {{ $customer->firstname }}</td>
+                    <td> {{ $customer->lastname }}</td>
                     <td> {{ $customer->username }}</td>
                     <td> {{ $customer->email }}</td>
                     <td> Vazio</td>
@@ -45,7 +46,6 @@
                     </td>
                 </tr>
             @endforeach
-        </tbody>
         </tbody>
     </table>
     </div>

@@ -9,7 +9,7 @@ class CustomerController extends Controller
 {
     protected $model;
 
-    // criando um construtor
+    // Construtor
     public function __construct(Customer $customer)
     {
         $this->model = $customer;
@@ -22,7 +22,7 @@ class CustomerController extends Controller
             search: $request ->search ?? ''
         );
         
-        return view ('customers.index', compact ('customer'));       
+        return view ('customers.index', compact ('customers'));       
     }
 
     //controle para mostrar usuario
