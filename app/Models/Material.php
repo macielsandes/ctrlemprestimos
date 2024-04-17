@@ -28,7 +28,7 @@ class Material extends Model
     }
 
     //O modelo muitos para muitos
-    public function materialLoans()
+    public function customers()
     {
         return $this->belongsToMany(Customer::class);
     }

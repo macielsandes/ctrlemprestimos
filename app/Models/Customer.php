@@ -30,7 +30,7 @@ class Customer extends Model
     }
 
     //modelo muitos para muitos
-    public function userLoans()
+    public function materials()
     {
         return $this->belongsToMany(Material::class);
     }
