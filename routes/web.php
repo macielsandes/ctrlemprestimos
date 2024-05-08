@@ -46,7 +46,7 @@ Route::post('/customer', [CustomerController::class, 'store']) -> name('customer
 Route::get('/customer/{id}', [CustomerController::class, 'show'])-> name('customers.show');
 
 
-Route::post('/register/loan{id}', [RegisterController::class, 'loan']) -> name('registers.loan'); 
+Route::post('/register/loan/{id}', [RegisterController::class, 'loan']) -> name('registers.loan'); 
 
 Route::get('/dashboard', [DashboardController::class, 'index'])-> name('dashboards.index');
 

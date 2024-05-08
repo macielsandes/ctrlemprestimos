@@ -43,7 +43,7 @@
                     <a class="nav-link active" href="/material">Materiais</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="/loan">Empréstimo</a>
+                    <a class="nav-link active" href="/register">Empréstimos</a>
                 </li>
             </ul>
             

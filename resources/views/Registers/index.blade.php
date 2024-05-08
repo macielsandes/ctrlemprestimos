@@ -1,6 +1,6 @@
 @extends('Layouts.default')
 
-@section('title', 'Home')
+@section('title', 'Registrar')
 
 @section('content')
 
