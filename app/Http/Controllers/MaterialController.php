@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Material;
+use App\Models\Customer;
 use Illuminate\Http\Request;
 
 /**
@@ -43,8 +44,7 @@ class MaterialController extends Controller
  
          //se for passado um ID de um material valido, direciona para a tela de edição de usuario
          return view('materials.show', compact('material'));
-     }
-     
+     }     
     
     //Controle para a edição de material
     public function create()
@@ -97,4 +97,5 @@ class MaterialController extends Controller
 
         return redirect() -> route('materials.index');
     }
+   
 }

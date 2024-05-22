@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('profiles', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained('users');
-            $table->string('type')-> unique();          
+            $table->string('type')-> unique();  
+            $table->foreignId('user_id')->constrained('users');        
             $table->timestamps();
         });
     }

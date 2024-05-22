@@ -9,7 +9,7 @@ class CustomerController extends Controller
 {
     protected $model;
 
-    // Construtor
+    // Construtor da classe
     public function __construct(Customer $customer)
     {
         $this->model = $customer;
@@ -35,6 +35,7 @@ class CustomerController extends Controller
         return view('customers.show', compact('customer'));
     }
     
+    //
     public function create()
     {
        return view('customers.create'); 
