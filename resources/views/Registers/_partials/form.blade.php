@@ -1,19 +1,26 @@
 @csrf
-<!--Forms de usuario-->
+<!--Forms de Emprestimo de material-->
+<div class="col-md">
+  <label for="materiais" class="form-label">Selecione o material:</label>
+  <select name='materiais' id='materiais' class="form-select">
+      <option value="">Selecione</option>
+          @forelse ($materiais as $material)
+              <option value="{{ $material->id }}" {{ old ('material')== $material->id ? 'selected' : '' }}> {{ $material ->name }} </option>
+          @empty
+              <option value="">Nenhum material cadastrado!</option>
+          @endforelse
+  </select>
 
-<fieldset>
-    <label for="firstname">Nome:</label>
-    <input type="text" name="firstname" id="firstname" value="{{ $customer->firstname ?? old('firstname') }}">
+  <div class="col-md">
+      <label for="customers" class="form-label">Selecione o usuario:</label>
+      <select name='customers' id='customers' class="form-select">
+          <option value="">Selecione</option>
+              @forelse ($customers as $customer)
+                  <option value="{{ $customer->id }}" {{ old ('customer')== $customer->id ? 'selected' : '' }}> {{ $customer ->name }} </option>
+              @empty
+                  <option value="">Nenhum cliente cadastrado! </option>
+              @endforelse
+      </select>
 
-    <label for="lastname">Sobrenome:</label>
-    <input type="text" name="lastname" id="lastname" value="{{ $customer->lastname ?? old('lastname') }}">
-
-    <label for="username">Username:</label>
-    <input type="text" name="username" id="username" value="{{ $customer->username ?? old('username') }}">
-
-    <label for="email">E-mail:</label>
-    <input type="email" name="email" id="email" value="{{ $customer->email ?? old('email') }}">
-</fieldset>
-<div>
-    <button type="submit">Salvar</button>
+      <button type="submit">Salvar</button>  
 </div>

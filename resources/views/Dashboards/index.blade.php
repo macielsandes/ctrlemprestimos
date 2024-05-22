@@ -4,7 +4,7 @@
 
 @section('content')
 
-    <main class="container">
+    <main class="container-fluid">
         <div class="bg-light p-5 rounded">
             <h1>Home</h1>
             <a class="btn btn-lg btn-primary" href="/docs/5.0/components/navbar/" role="button">View navbar docs »</a>

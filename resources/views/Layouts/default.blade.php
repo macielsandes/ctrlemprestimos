@@ -21,6 +21,8 @@
 
 <body>
 
+    <div class="container-fluid">         
+    
     <div class="class="navbar bg-body-tertiary">
         <a class=" navbar-brand" href="/dashboard">CTRL EMPRÉSTIMOS</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample03"
@@ -46,7 +48,7 @@
                     <a class="nav-link active" href="/material">Materiais</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="/register">Registros</a>
+                    <a class="nav-link active" href="/register">Controle de Empréstimos</a>
                 </li>
             </ul>
         </div>
@@ -54,7 +56,7 @@
     </nav>
 
     <!--Conteudo-->
-    <section class="container">
+    <section>
         @yield('content')
     </section>
 
@@ -70,6 +72,7 @@
             </a>
         </div>
     </footer>
+</div> 
 
     <!-- Js Bootstrap-->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"

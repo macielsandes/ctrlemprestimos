@@ -46,9 +46,9 @@ Route::post('/customer', [CustomerController::class, 'store']) -> name('customer
 Route::get('/customer/{id}', [CustomerController::class, 'show'])-> name('customers.show');
 
 Route::get('/register', [RegisterController::class, 'index']) -> name('registers.index'); 
-Route::get('/register', [RegisterController::class, 'create']) -> name('registers.create'); 
-Route::get('/register', [RegisterController::class, 'store']) -> name('registers.store'); 
-//Route::get('/register', [RegisterController::class, 'loan']) -> name('registers.loan'); 
+Route::get('/register/create', [RegisterController::class, 'create']) -> name('registers.create'); 
+//Route::get('/register', [RegisterController::class, 'store']) -> name('registers.store'); 
+Route::post('/register/loan', [RegisterController::class, 'loan']) -> name('registers.loan'); 
 
 Route::get('/dashboard', [DashboardController::class, 'index'])-> name('dashboards.index');
 

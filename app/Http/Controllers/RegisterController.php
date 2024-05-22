@@ -10,21 +10,25 @@ use Illuminate\Http\Request;
 class RegisterController extends Controller
 {
     public function index(){
+
        return view('registers.index');
     }
-
     
-    public function create(){       
-       
-        return view('registers.create');
-
+    public function create(){        
+        //recuperar materiais cadastrados 
+        $materiais = Material::orderby('name', 'asc')->get();
+        //recuperar clientes cadastros
+        $customers = Customer::orderby('name', 'asc')->get();
+        
+        return view('registers.create', ['materiais' => $materiais, 'customers' => $customers]);
     }
 
-    public function store(){
+   public function store(){
+        
+        $material = Material::all();
+        $customer = Customer::all();
 
-         //continuar a partir daqui  
-
-    }
+     }
 
     //Registrar emprestimos
 
