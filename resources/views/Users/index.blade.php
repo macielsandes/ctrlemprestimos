@@ -10,7 +10,7 @@
 
         <!--Botao para cadastro de novo usuario-->
         <div class="col">
-            <a class="btn btn-primary" href="{{ route('users.create') }}" role="button"> Adicionar Novo Usuário</a>
+            <a class="btn btn-primary" href="{{ route('users.create') }}" role="button"> Novo Usuário</a>
         </div>
 
         <!--Div da barra de pesquisa-->
@@ -30,10 +30,8 @@
                         <th scope="col">Primeiro nome</th>
                         <th scope="col">Ultimo nome</th>
                         <th scope="col">E-mail</th>
-                        <th scope="col">Status</th>
-                        <th scope="col">Ação</th>
-                        <th scope="col">Ação</th>
-                        
+                        <th scope="col">Perfil de usuário</th>
+                        <th scope="col">Ação</th>                        
                     </tr>
                 </thead>
                 <tbody>
@@ -45,13 +43,12 @@
                             <td> {{ $user->email }}</td>
                             <td></td>
                             <td>
-                                <a class="btn btn-primary" href="{{ route('users.edit', $user->id) }}"
-                                    role="button">Editar</a>
-                            </td>
-                            <td>
+                               
                                 <a class="btn btn-danger" href="{{ route('users.show', $user->id) }}"
                                     role="button">Remover</a>
-                            </td>
+                                    <a class="btn btn-primary" href="{{ route('users.edit', $user->id) }}"
+                                        role="button">Editar</a>    
+                            </td>                           
                         </tr>
                     @endforeach
                 </tbody>

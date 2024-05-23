@@ -4,9 +4,9 @@
 
 @section('content')
     <div class="container text-center">
-        <h1>Controle de Materiais Emprestados</h1>
+        <h1 >Controle de Materiais Emprestados</h1>
     </div>
-    
+        
     <!-- Container para o botão e barra de pesquisa-->
     <div class="container-fluid">
         <div class="row">
@@ -16,7 +16,6 @@
             </div>
         </div>        
     
-    </div>
-    
+    </div>    
     
 @endsection

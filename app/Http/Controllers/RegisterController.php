@@ -5,13 +5,15 @@ namespace App\Http\Controllers;
 
 use App\Models\Material;
 use App\Models\Customer;
+use App\Models\
 use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
-    public function index(){
-
-       return view('registers.index');
+         
+      public function index(){
+        emprestimo = 
+       return view('registers.index', ['materiais' => $materiais, 'customers' => $customers]);
     }
     
     public function create(){        
@@ -23,9 +25,9 @@ class RegisterController extends Controller
         return view('registers.create', ['materiais' => $materiais, 'customers' => $customers]);
     }
 
-   public function store(){
+   public function store($materiais, $customers){
         
-        $material = Material::all();
+        $material = Material::find($material_id);
         $customer = Customer::all();
 
      }

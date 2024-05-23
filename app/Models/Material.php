@@ -13,7 +13,8 @@ class Material extends Model
     protected $fillable = [
         'name', 
         'description',
-        'imagem',
+        'qty',
+        'image',
     ];
 
     public function getMaterials(string|null $search = null)
@@ -27,7 +28,10 @@ class Material extends Model
         return $materials;
     }
 
-    //O modelo muitos para muitos
+    /**
+     * The customers that belong to the product.
+     * 
+     */
     public function customers()
     {
         return $this->belongsToMany(Customer::class);

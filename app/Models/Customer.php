@@ -28,7 +28,10 @@ class Customer extends Model
         return $customer;
     }
 
-    //modelo muitos para muitos
+    /**
+     * The materials that belong to the customer.
+     * 
+     */
     public function materials()
     {
         return $this->belongsToMany(Material::class);

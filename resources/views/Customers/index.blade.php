@@ -17,9 +17,10 @@
             <tr>
                 <th scope="col">Id</th>
                 <th scope="col">Primeiro Nome</th>
-                <th scope="col">Ultimo Nome</th>
-                <th scope="col">username</th>
-                <th scope="col">email</th>
+                <th scope="col">último Nome</th>                
+                <th scope="col">Usuário</th>
+                <th scope="col">E-mail</th>
+                <th scope="col">Telefone</th>
                 <th scope="col"></th>
                 <th scope="col"></th>
                 <th scope="col"></th>
@@ -37,12 +38,13 @@
                     <td> Vazio</td>
                     <td> Vazio</td>
                     <td>
+                        <a class="btn btn-danger" href="{{ route('customers.show', $customer->id) }}"
+                            role="button">Remover</a>
                         <a class="btn btn-primary" href="{{ route('customers.edit', $customer->id) }}"
-                            role="button">Editar</a>
+                            role="button">Editar</a>                           
                     </td>
                     <td>
-                        <a class="btn btn-primary" href="{{ route('customers.show', $customer->id) }}"
-                            role="button">Remover</a>
+                       
                     </td>
                 </tr>
             @endforeach
