@@ -4,7 +4,7 @@
   <label for="materiais" class="form-label">Selecione o material:</label>
   <select name='materiais' id='materiais' class="form-select">
       <option value="">Selecione</option>
-          @forelse ($materiais as $material)
+          @forelse ($materials as $material)
               <option value="{{ $material->id }}" {{ old ('material')== $material->id ? 'selected' : '' }}> {{ $material ->name }} </option>
           @empty
               <option value="">Nenhum material cadastrado!</option>

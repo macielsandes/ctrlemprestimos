@@ -11,49 +11,51 @@
 
     <!-- Icons Bootstrap-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
+    
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+
+     <!--Meu CSS do projeto-->
+     <link rel="stylesheet" href="/css/styles.css">
+
 
     <title>@yield('title') - Controle de Empréstimos</title>
 </head>
 
 <body>
-
-    <div class="container-fluid">         
-    
-    <div class="class="navbar bg-body-tertiary">
-        <a class=" navbar-brand" href="/dashboard">CTRL EMPRÉSTIMOS</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample03"
-            aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-    </div>
-
-    <nav class=" navbar-col-lg-5 justify-content-lg-center navbar navbar-expand-sm " aria-label="Seg navbar">       
-        
-        <div class="collapse navbar-collapse" id="navbarsExample03">
-            <ul class="navbar-nav me-auto mb-2 mb-sm-0">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/dashboard">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="/user">Usuários</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="/customer">Clientes</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="/material">Materiais</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="/register">Controle de Materiais</a>
-                </li>
-            </ul>
-        </div>
-        </div>
-    </nav>
+ 
+    <header>
+        <nav class=" navbar-col-lg-5 justify-content-lg-center navbar navbar-expand-sm " aria-label="Seg navbar">           
+            <div class="class="navbar bg-body-tertiary">
+                <a class=" navbar-brand" href="/dashboard">CTRL EMPRÉSTIMOS</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbars3"
+                    aria-controls="navbars" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+                    
+            <div class="collapse navbar-collapse" id="navbars">
+                <ul class="navbar-nav me-auto mb-2 mb-sm-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/dashboard">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/user">Usuários</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/customer">Clientes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/material">Materiais</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/loan">Empréstimos</a>
+                    </li>
+                </ul>
+            </div>        
+        </nav>       
+    </header>    
 
     <!--Conteudo-->
     <section>

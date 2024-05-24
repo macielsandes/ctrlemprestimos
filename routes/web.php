@@ -6,6 +6,7 @@ use App\Http\Controllers\{
     CustomerController,   
     RegisterController,
     DashboardController,
+    LoanMaterialController,
 };
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Route;
@@ -45,10 +46,10 @@ Route::get('/customer/create', [CustomerController::class, 'create']) -> name('c
 Route::post('/customer', [CustomerController::class, 'store']) -> name('customers.store');
 Route::get('/customer/{id}', [CustomerController::class, 'show'])-> name('customers.show');
 
-Route::get('/register', [RegisterController::class, 'index']) -> name('registers.index'); 
-Route::get('/register/create', [RegisterController::class, 'create']) -> name('registers.create'); 
+Route::get('/loan', [LoanMaterialController::class, 'index']) -> name('loan.index'); 
+Route::get('/loan/register/', [LoanMaterialController::class, 'register']) -> name('loan.register'); 
 //Route::get('/register', [RegisterController::class, 'store']) -> name('registers.store'); 
-Route::post('/register/loan', [RegisterController::class, 'loan']) -> name('registers.loan'); 
+Route::post('/loan/loanmaterial/', [LoanMaterialController::class, 'loanMaterial']) -> name('loan.loanmaterial'); 
 
 Route::get('/dashboard', [DashboardController::class, 'index'])-> name('dashboards.index');
 

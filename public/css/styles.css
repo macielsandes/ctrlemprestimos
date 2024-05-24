@@ -1,0 +1,61 @@
+  /* Definindo que todo o projeto usará a fonte do Google */
+  *{
+  font-family: 'Roboto';
+  }
+  
+  body {
+    padding-bottom: 20px;
+  }
+
+  .bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
+  
+  .selector-for-some-widget {
+    box-sizing: content-box;
+  }
+/* Estilo que permite mudança de tela no CSs*/
+  .custom-class {
+    display: none;
+  }
+  @include media-breakpoint-up(sm) {
+    .custom-class {
+      display: block;
+    }
+  }
+
+/*CSS para mudança para organizacao botao*/
+  div.absolute {
+    position: absolute;
+    bottom: 10px;
+    width: 50%;
+    border: 3px solid #8AC007;
+  }
+
+  .bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
+
+
+
+  

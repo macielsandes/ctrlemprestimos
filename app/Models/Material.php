@@ -32,6 +32,7 @@ class Material extends Model
      * The customers that belong to the product.
      * 
      */
+   
     public function customers()
     {
         return $this->belongsToMany(Customer::class);

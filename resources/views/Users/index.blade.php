@@ -31,7 +31,7 @@
                         <th scope="col">Ultimo nome</th>
                         <th scope="col">E-mail</th>
                         <th scope="col">Perfil de usuário</th>
-                        <th scope="col">Ação</th>                        
+                        <th scope="col">Ação</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -43,15 +43,25 @@
                             <td> {{ $user->email }}</td>
                             <td></td>
                             <td>
-                               
+
                                 <a class="btn btn-danger" href="{{ route('users.show', $user->id) }}"
                                     role="button">Remover</a>
-                                    <a class="btn btn-primary" href="{{ route('users.edit', $user->id) }}"
-                                        role="button">Editar</a>    
-                            </td>                           
+                                <a class="btn btn-primary" href="{{ route('users.edit', $user->id) }}"
+                                    role="button">Editar</a>
+                            </td>
                         </tr>
                     @endforeach
                 </tbody>
             </table>
+        </div>
+
+        <div class="container mt-6">
+            <ul class="pagination  justify-content-center">
+                <li class="page-item disabled"><a class="page-link" href="#">Anterior</a></li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">Próxima</a></li>
+            </ul>
         </div>
     @endsection
