@@ -26,11 +26,11 @@
             <table class="table table-bordered">
                 <thead class="table-dark table-striped ">
                     <tr>
-                        <th scope="col">Id</th>
+                        <th scope="col">ID</th>
                         <th scope="col">Primeiro nome</th>
                         <th scope="col">Ultimo nome</th>
                         <th scope="col">E-mail</th>
-                        <th scope="col">Perfil de usuário</th>
+                        <th scope="col">Perfil</th>
                         <th scope="col">Ação</th>
                     </tr>
                 </thead>

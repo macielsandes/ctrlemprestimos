@@ -5,9 +5,8 @@
 @section('content')
 
     <main class="container-fluid">
-        <div class="bg-light p-5 rounded">
-            <h1>Home</h1>
-            <a class="btn btn-lg btn-primary" href="/docs/5.0/components/navbar/" role="button">View navbar docs »</a>
+        <div class="  bg-light border p-5 rounded">
+            <h1>Home</h1>            
         </div>
 
         <div class="container">
@@ -51,6 +50,5 @@
                 </div>
             </div>
         </div>
-
     </main>
 @endsection

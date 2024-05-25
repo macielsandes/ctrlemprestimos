@@ -26,15 +26,12 @@ class Material extends Model
         })->get();    
 
         return $materials;
-    }
-
-    /**
-     * The customers that belong to the product.
-     * 
-     */
-   
-    public function customers()
+    }  
+    
+    public function loanMaterials()
     {
-        return $this->belongsToMany(Customer::class);
+        return $this->hasMany(Material::class);
     }   
+   
+   
 }

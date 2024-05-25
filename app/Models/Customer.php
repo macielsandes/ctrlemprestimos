@@ -10,7 +10,7 @@ class Customer extends Model
     use HasFactory;
 
     protected $fillable = [ 
-        'name', 'username','email',
+        'fistname', 'lastname','username','email',
     ];
 
     // modelo da classe Customer
@@ -26,12 +26,10 @@ class Customer extends Model
         return $customer;
     }
 
-    /**
-     * The materials that belong to the customer.
-     * 
-     */
-    public function materials()
+    public function loan()
     {
-        return $this->belongsToMany(Material::class);
-    }
+        return $this->hasMany(loan::class);
+    }   
+
+    
 }

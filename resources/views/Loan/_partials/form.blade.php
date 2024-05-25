@@ -3,7 +3,7 @@
 <div class="col-md">
   <label for="materiais" class="form-label">Selecione o material:</label>
   <select name='materiais' id='materiais' class="form-select">
-      <option value="">Selecione</option>
+      <option>Selecione</option>
           @forelse ($materials as $material)
               <option value="{{ $material->id }}" {{ old ('material')== $material->id ? 'selected' : '' }}> {{ $material ->name }} </option>
           @empty
@@ -12,9 +12,9 @@
   </select>
 
   <div class="col-md">
-      <label for="customers" class="form-label">Selecione o usuario:</label>
+      <label for="customers" class="form-label">Selecione o usuário:</label>
       <select name='customers' id='customers' class="form-select">
-          <option value="">Selecione</option>
+          <option>Selecione</option>
               @forelse ($customers as $customer)
                   <option value="{{ $customer->id }}" {{ old ('customer')== $customer->id ? 'selected' : '' }}> {{ $customer ->name }} </option>
               @empty

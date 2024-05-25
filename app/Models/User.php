@@ -18,10 +18,7 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'firstName',
-        'lastName',
-        'email',
-        'password',
+        'firstname', 'lastname', 'email', 'password',
     ];
 
     /**
@@ -55,11 +52,5 @@ class User extends Authenticatable
         })->get();    
 
         return $user;
-    }
-
-    public function profire()
-    {
-        return $this->hasOne(Profile::class);
     }    
-    
 }

@@ -26,8 +26,9 @@
 <body>
  
     <header>
-        <nav class=" navbar-col-lg-5 justify-content-lg-center navbar navbar-expand-sm " aria-label="Seg navbar">           
-            <div class="class="navbar bg-body-tertiary">
+        <nav class="navbar-col-lg-5 justify-content-lg-center navbar navbar-expand-sm bg-dark" aria-label="Seg navbar">
+            <div class="container-fluid mt-3">           
+            <div class="navbar bg-body-tertiary">
                 <a class=" navbar-brand" href="/dashboard">CTRL EMPRÉSTIMOS</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbars3"
                     aria-controls="navbars" aria-expanded="false" aria-label="Toggle navigation">
@@ -53,7 +54,8 @@
                         <a class="nav-link active" href="/loan">Empréstimos</a>
                     </li>
                 </ul>
-            </div>        
+            </div> 
+            </div>           
         </nav>       
     </header>    
 

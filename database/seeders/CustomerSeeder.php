@@ -15,43 +15,50 @@ class CustomerSeeder extends Seeder
     public function run(): void
     {
         Customer::create([
-            'name' => 'Alice Manuela',
+            'fistname' => 'Alice',
+            'lastname' => 'Manuela',
             'username' => 'alice.manuela',
             'email' => 'alice.manuela@gmail.com',
         ]);
 
-        Customer::create([
-            'name' => 'Beatriz Pietra',
+        Customer::create([            
+            'fistname' => 'Beatriz',
+            'lastname' => 'Pietra',
             'username' => 'beatriz.pietra',
             'email' => 'beatriz.pietra@gmail.com',
         ]);
 
         Customer::create([
-            'name' => 'Enzo Vicente',
+            'fistname' => 'Enzo',
+            'lastname' => 'Vicente',
             'username' => 'enzo.vicente',
             'email' => 'enzo.vicente@outlook.com',
         ]);
 
-        Customer::create([
-            'name' => 'Guilherme Benjamin',
+        Customer::create([        
+            'fistname' => 'Guilherme',
+            'lastname' => 'Benjamin',
             'username' => 'guilherme.benjamin',
             'email' => 'guilherme.benjamin@outlook.com',
         ]);
 
-        Customer::create([
-            'name' => 'Matheus Rafael',
+        Customer::create([        
+            'fistname' => 'Matheus ',
+            'lastname' => 'Rafael',
             'username' => 'matheus.rafael',
             'email' => 'matheus.rafael@outlook.com',
         ]);
 
-        Customer::create([
-            'name' => 'David Bruno',
+        Customer::create([           
+            'fistname' => 'David',
+            'lastname' => 'Bruno',
             'username' => 'david.bruno',
             'email' => 'david.bruno@outlook.com',
         ]);
         
         Customer::create([
-            'name' => 'Rodrigo Martins',
+            'fistname' => 'Rodrigo',
+            'lastname' => 'Martins',
             'username' => 'rodrigo.martins',
             'email' => 'rodrigo.martins@outlook.com',
         ]);

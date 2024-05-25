@@ -19,17 +19,17 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        Schema::create('loan_materials', function (Blueprint $table) {
-            $table->id();         
-           
-            $table->unsignedBigInteger('customer_id');
-            $table->foreign('customer_id')->references('id')->on('customers')->onDelete('cascade');
-            
+        Schema::create('loans', function (Blueprint $table) {
+            $table->id();   
+
             $table->unsignedBigInteger('material_id');           
-            $table->foreign('material_id')->references('id')->on('materials')->onDelete('cascade');    
+            $table->foreign('material_id')->references('id')->on('materials')->onDelete('cascade');  
+
+            $table->unsignedBigInteger('customer_id');
+            $table->foreign('customer_id')->references('id')->on('customers')->onDelete('cascade');               
             
-            $table->timestamps();
             $table-> boolean('status')->default(true);
+            $table->timestamps();        
            
         });
 
@@ -39,7 +39,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('loan_material');
+        Schema::dropIfExists('loans');
         Schema::dropIfExists('materials');
     }
 };

@@ -3,15 +3,16 @@
 @section('title', 'Clientes')
 
 @section('content')
-
-    <h2>Clientes</h2>
-    
+    <div class="container"> 
+       <h2>Clientes</h2>
+    </div>
     <!--Botao para cadastro de novo cliente-->
     <div class="col">
         <a class="btn btn-primary" href="{{ route('customers.create') }}" role="button">Novo cliente</a>
     </div>
 
-    <table class="table table-bordered">
+    <div class="container">
+    <table class="table table-bordered table-striped table-hover">
         <caption>Clientes</caption>
         <thead class="table-dark table-striped ">
             <tr>
@@ -19,11 +20,7 @@
                 <th scope="col">Primeiro Nome</th>
                 <th scope="col">último Nome</th>                
                 <th scope="col">Usuário</th>
-                <th scope="col">E-mail</th>
-                <th scope="col">Telefone</th>
-                <th scope="col"></th>
-                <th scope="col"></th>
-                <th scope="col"></th>
+                <th scope="col">E-mail</th>           
             </tr>
         </thead>
 
@@ -43,8 +40,7 @@
                         <a class="btn btn-primary" href="{{ route('customers.edit', $customer->id) }}"
                             role="button">Editar</a>                           
                     </td>
-                    <td>
-                       
+                    <td>                       
                     </td>
                 </tr>
             @endforeach
