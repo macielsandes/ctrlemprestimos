@@ -11,10 +11,7 @@ class Material extends Model
 
     //Model para buscar informações no banco de dados
     protected $fillable = [
-        'name', 
-        'description',
-        'qty',
-        'image',
+        'name',  'description', 'qty', 'image',
     ];
 
     public function getMaterials(string|null $search = null)
@@ -28,9 +25,9 @@ class Material extends Model
         return $materials;
     }  
     
-    public function loanMaterials()
+    public function loanCustomer()
     {
-        return $this->hasMany(Material::class);
+        return $this->belongsToMany(Customer::class);
     }   
    
    

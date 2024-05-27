@@ -11,7 +11,7 @@
         <div class="row py-2">
             <!--Botao de emprestimo -->
             <div class="col-md-6">
-                <a class="btn btn-primary" href="{{ route('loan.register') }}" role="button">Registrar Empréstimo</a>
+                <a class="btn btn-primary" href="{{ route('loan.create') }}" role="button">Registrar Empréstimo</a>
             </div>
             <!--Botao de devolucao -->
             <div class="col-md-6">
@@ -38,19 +38,7 @@
                     <th scope="col">Material</th>
                     <th scope="col">Emprestado a:</th>
                 </tr>
-            </thead>
-
-            <tbody>
-                @foreach ($loanMaterials as $loanMaterial)
-                    <tr>
-                        <td> {{ $loanMaterial->id }} </td>
-                        <td> {{ $loanMaterial->materials->name }} </td>
-                        <td> {{ $loanMaterial->customers->name }} </td>
-                        <td> {{ $loanMaterial->status }} </td>
-                @endforeach
-            </tbody>
-        </table>
-    </div>   
+            </thead>     
 
 
     <div class="container mt-6">

@@ -1,8 +1,8 @@
   /* Definindo que todo o projeto usará a fonte do Google */
-  *{
-  font-family: 'Roboto';
+  body{
+  font-family: 'Roboto', sans-serif;
   }
-  
+
   body {
     padding-bottom: 20px;
   }

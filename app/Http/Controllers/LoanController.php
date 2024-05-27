@@ -13,16 +13,18 @@ class LoanController extends Controller
     
     public function index(){
 
-        $loan= Loan::all();
+        //$loan= Loan::all();
         
-        return view('loan.index', compact('loanMaterial'));     
+        //return view('loan.index', compact('loanMaterial'));  
+        
+        return view('loan.index');    
        
      }
      
      public function create(){        
         
          //recuperar materiais cadastrados 
-         $materials = Material::orderby('name', 'asc')->get();
+         $materials = loanMaterial::orderby('name', 'asc')->get();
          
          //recuperar clientes cadastros
          $customers = Customer::orderby('name', 'asc')->get();

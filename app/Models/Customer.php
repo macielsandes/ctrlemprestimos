@@ -26,9 +26,12 @@ class Customer extends Model
         return $customer;
     }
 
-    public function loan()
+    /**
+     * The roles that belong to the loanusers.
+     */
+    public function loanMaterial()
     {
-        return $this->hasMany(loan::class);
+        return $this->belongsToMany(loan::class);
     }   
 
     

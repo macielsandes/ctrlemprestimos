@@ -4,9 +4,10 @@
 
 @section('content')
 
-    <h2>Usuários</h2>
-
-    <div class="row d-flex bd-highlight">
+<div class="container-fluid border p-3 mt-10">
+    <h1>Usuários</h1>
+</div>
+    <div class="row p-3 d-flex bd-highlight">
 
         <!--Botao para cadastro de novo usuario-->
         <div class="col">
@@ -21,8 +22,9 @@
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
             </form>
         </div>
-
-        <div class="table-responsive">
+    </div>
+       
+    <div class="table-responsive">
             <table class="table table-bordered">
                 <thead class="table-dark table-striped ">
                     <tr>
@@ -64,4 +66,5 @@
                 <li class="page-item"><a class="page-link" href="#">Próxima</a></li>
             </ul>
         </div>
+    </div>    
     @endsection
