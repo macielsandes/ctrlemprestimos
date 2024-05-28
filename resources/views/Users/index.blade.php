@@ -1,14 +1,14 @@
 @extends('Layouts.default')
 
-@section('title', 'Usuários')
+@section('title', 'Listagem dos Usuários')
 
 @section('content')
 
 <div class="container-fluid border p-3 mt-10">
-    <h1>Usuários</h1>
+    <h1>Listagem dos Usuários</h1>
 </div>
     <div class="row p-3 d-flex bd-highlight">
-
+        
         <!--Botao para cadastro de novo usuario-->
         <div class="col">
             <a class="btn btn-primary" href="{{ route('users.create') }}" role="button"> Novo Usuário</a>

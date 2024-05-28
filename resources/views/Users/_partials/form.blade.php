@@ -15,10 +15,16 @@
     <label for="password" class="form-label">Senha:</label>
     <input class="form-control" type="password" name="password" id="password">
 
-    <label for="password" class="form-label">Repete senha:</label>
+    <label for="password" class="form-label">Repeta senha:</label>
     <input class="form-control" type="password" name="password" id="password">
 
     <div class="form-group mb-3">
-        <button type="submit" class="btn btn-secondary">Salvar</button>
+        <button type="submit" 
+            class="btn btn-secondary">Salvar e Novo</button>
     </div>
+    <div class="form-group mb-3">
+        <button type="submit" 
+            class="btn btn-secondary">Salvar e Sair</button>
+    </div>
+
 </div>

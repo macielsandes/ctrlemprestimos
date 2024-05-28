@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="container text-center">
-        <h1>Controle de Materiais Emprestados</h1>
+        <h1>Materiais disponíveis para empréstimo</h1>
     </div>
 
     <div class="container-fluid mt-3">
@@ -13,18 +13,14 @@
             <div class="col-md-6">
                 <a class="btn btn-primary" href="{{ route('loan.create') }}" role="button">Registrar Empréstimo</a>
             </div>
-            <!--Botao de devolucao -->
-            <div class="col-md-6">
-                <a class="btn btn-primary" href="" role="button">Registrar Devolução </a>
-            </div>
+           
         </div>
 
         <!--Div da barra de pesquisa-->
-        <div class="col-md-6">
-            <form class=" d-flex ms-auto p-2 bd-highlight" action="" method="get">
-                <input class="form-control me-2" type="search" name ="search" placeholder="Pesquisar"
-                    aria-label="Pesquisar">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
+        <div class="col-md-3">
+            <form action="/material/search" method="get">
+                <input type="text" id="search" name ="search" class="form-control" placeholder="Pesquisar material">                    
+                <button class="btn btn-outline-success" type="submit">Pesquisar</button>
             </form>
         </div>
     </div>
@@ -38,7 +34,15 @@
                     <th scope="col">Material</th>
                     <th scope="col">Emprestado a:</th>
                 </tr>
-            </thead>     
+            </thead>  
+            
+            @foreach ($loans as $loan)
+            <tr>
+                <td> {{ $loan->id }} </td>
+                <td> {{ $loan->material->name }} </td>
+                <td> {{ $loan->customer->fistname }} </td>              
+            </tr>
+        @endforeach       
 
 
     <div class="container mt-6">

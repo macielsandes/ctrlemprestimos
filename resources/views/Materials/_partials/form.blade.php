@@ -1,20 +1,19 @@
-@csrf   
-  <!--Forms de cadastro de Material-->
-    <label for="fnome">Nome:</label>
-      <input type="text" name="nome" id="textarea" placeholder="Nome" 
-        value="{{ $material-> nome ?? old('nome') }}">
-           
-      <label for="fdescricao">Nome:</label>
-        <input type="text" name="descricao" id="textarea" placeholder="Descricao" 
-         value="{{ $material-> descricao ?? old('descricao') }}">
-      
-      <label for="qtd">Quantidade:</label>
-        <input type="number" name="qtd" id='qtd' placeholder="1" 
-          value="{{$material->qtd ?? old ('qtd')}}">
-      
-      <label for="qty">Imagem:</label>      
-        <input type="file" id='fileMaterial' name="fileimagem"         
-          value="{{ $material->imagem ?? old ('imagem')}}">  
-
-      <button type="submit">Salvar</button>
- 
+@csrf
+<!--Forms de cadastro de Material-->
+<div class="form-group mb-3 mt-3">
+    <label for="fname">Nome:</label>
+    <input type="text" class="form-control" id="name" name="name" placeholder="Nome de identificação do material"
+        value="{{ $material->name ?? old('nome') }}">
+</div>
+<div class="form-group mb-3 mt-3">
+    <label for="fdescription">Descrição:</label>
+      <textarea name="description" id="description" rows="10" class="form-control" 
+        placeholder=" Uma breve descrição para identificação do material"
+        value="{{ $material->description ?? old('description') }}"> </textarea>
+</div>
+<div class="form-group mb-3 mt-3">
+    <label for="image">Imagem do material:</label>
+    <input type="file" id='image' name="image" class="from-control-file"
+        value="{{ $material->image ?? old('image') }}">
+</div>
+    <input type="submit" class="btn btn-primary" value="Salvar Material">

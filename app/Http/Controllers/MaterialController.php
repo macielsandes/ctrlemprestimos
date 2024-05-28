@@ -37,38 +37,64 @@ class MaterialController extends Controller
      //controle para mostrar material
      public function show($id)
      {
-         //$user = User::where ('id',$id) ->first();
-         if(!$material= Material::find($id))
-            return redirect() -> route('materials.index');
- 
+         //opção 1
+        //$user = User::where ('id',$id) ->first();
+        //opção 2
+        /* if(!$material= Material::find($id))
+            return redirect() -> route('materials.index');*/
+
+        //opção 3
+        $material = Material::findOrFail($id);
+         
          //se for passado um ID de um material valido, direciona para a tela de edição de usuario
          return view('materials.show', compact('material'));
      }     
     
-    //Controle para a edição de material
+    //Função que direcionar a pagina de criação de usuario
     public function create()
     {
        return view('materials.create');    
     }  
 
-    //Enviando dados cadastrados para o banco de dados
+    /** 
+     * Função responsavel por receber as informações do formulario 
+     * e realizar o cadastro no banco de dados
+    */
     public function store(Request $request)
     {
-        $material = new Material();
-        
-        $material->create($request->all());
+        // uma das formas de se salvar dados no banco de dados
+        //$material = new Material;        
+        //$material->create($request->all());
+        //$material->save();
 
-        return redirect()-> route ('materials.index');
+        // segunda forma
+        $material= new Material;
+        
+        $material->name = $request->name;
+        $material->description = $request->description;
+
+        //image Upload
+        if($request->hasFile('image') && $request->file('image')->isValid()){
+            $requestImage= $request ->image;
+            $extension = $requestImage->extension();
+            $imageName = md5($requestImage->getClientOriginalName(). strtotime("now")). "." . $extension;            
+            $requestImage->move(public_path('img/materials'), $imageName);
+            $material->image =$imageName;
+        }        
+        
+        $material->save();
+        
+        return redirect()-> route ('materials.index')->with('msg', 'Material cadastrado com sucesso!');        
     
     }
 
      //Editando um usuário
     public function edit($id)
       {
-          if (!$user= Material::find($id))
+          if (!$material= Material::find($id))
              return redirect() -> route('materials.index');
   
-          return view('materials.edit', compact('materials'));
+          return view('materials.edit', compact('material'));
       }
 
       //Atualizando os registros de um usuario

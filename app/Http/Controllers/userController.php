@@ -16,7 +16,7 @@ class UserController extends Controller
         $this->model = $user;
     }
 
-    //Controle que direciona para pagina inicial de usuario
+    //Função responsavel por direcionar a tela inicial
     public function index(Request $request)
     {
         $users = $this->model
@@ -27,7 +27,7 @@ class UserController extends Controller
        return view ('users.index', compact('users'));
     }
     
-    //controle para mostrar usuario
+    //Funcao de editar um determinado usuário
     public function show($id)
     {       
         if(!$user= User::find($id))
@@ -37,12 +37,17 @@ class UserController extends Controller
         return view('users.show', compact('user'));
     }
     
+    //Função que direcionar a pagina de criação de usuario
     public function create()
     {
        return view('users.create'); 
     }
     
-    //Enviando dados do formulario para o banco de dados
+    /** 
+     * Função responsavel por receber as informações do formulario 
+     * e realizar o cadastro no banco de dados
+    */
+    
     public function store(StoreUpdateUsersFormRequest $request)
     {   
         //Recebendo todos dados do formulario, porem uma verificação propria de criptografa no campo senha

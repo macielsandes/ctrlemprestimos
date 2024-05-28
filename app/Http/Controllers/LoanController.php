@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use app\Models\Loan;
-use app\Models\Material;
-use app\Models\Customer;
+use App\Models\Loan;
+use App\Models\Material;
+use App\Models\Customer;
 
 class LoanController extends Controller
 {
@@ -13,44 +13,44 @@ class LoanController extends Controller
     
     public function index(){
 
-        //$loan= Loan::all();
+        $loans= Loan::all();
         
         //return view('loan.index', compact('loanMaterial'));  
         
-        return view('loan.index');    
+        return view('loan.index', compact('loans'));    
        
      }
      
      public function create(){        
         
-         //recuperar materiais cadastrados 
-         $materials = loanMaterial::orderby('name', 'asc')->get();
+        //$material = new Material();
+        //$customer = new Customer();
+        
+        //recuperar materiais cadastrados 
+        $materials = Material::orderby('name', 'asc')->get();
+
+        //$material = Material->get();
          
          //recuperar clientes cadastros
-         $customers = Customer::orderby('name', 'asc')->get();
+         $customers = Customer::orderby('fistname', 'asc')->get();
          
-         //return view('loan.create', ['materiais' => $materiais, 'customers' => $customers]);
+        //return view('loan.create', ['materiais' => $materiais, 'customers' => $customers]);
  
          return view('loan.create', compact ('materials','customers'));
-     }
+     } 
+    
  
-     /*public function loanMaterial($idMaterial, $idCustomer){
-         
-         $material->materials()->attach($idMaterial);
+   public function store(Request $request){
+
+        $loan =new Loan;
+               
+        $loan->material_id = $request->material;
+        $loan->customer_id = $request->customer;
+        $loan->save();
+
+        return view('loan.index');    
  
-         return redirect('loan.index');
-     }*/
- 
- 
-   /* public function store($materiais, $customers){
-         
-         $material = Material::find($material_id);
-         $customer = Customer::all();
- 
- 
- 
- 
-      }*/
+      }
  
      //Registrar emprestimos
  

@@ -1,6 +1,6 @@
 @extends('Layouts.default')
 
-@section('title', 'Cliente')
+@section('title', 'Cadastrar novo usuário')
 
 @section('content')
     <div>
@@ -11,5 +11,4 @@
         @include('users._partials.form')
     </form>
     </div>
-
 @endsection

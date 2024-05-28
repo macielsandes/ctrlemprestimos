@@ -19,15 +19,18 @@
     <!--Meu CSS do projeto-->
     <link rel="stylesheet" href="/css/styles.css">
 
+     <!--Meu CSS do projeto-->
+     <link rel="stylesheet" href="/js">
+
 
     <title>@yield('title') - Controle de Empréstimos</title>
 </head>
 
 <body>
+    
     <header>
         <div class="container-fluid bg-dark" id="nav-container">
-            <nav class="navbar navbar-expand-lg bg-dark border-bottom border-body" aria-label="Seg navbar" data-bs-theme="dark">
-                <div class="container navbar bg-body-tertiary">
+            <nav class="navbar navbar-expand-lg bg-dark border-bottom border-body" aria-label="Seg navbar" data-bs-theme="dark">              
                     <a class=" navbar-brand" href="/dashboard">CTRL EMPRÉSTIMOS</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-links"
                         aria-controls="navbars-links" aria-expanded="false" aria-label="Toggle navigation">
@@ -50,16 +53,25 @@
                             <li class="nav-item">
                                 <a class="nav-link active" href="/loan">Empréstimos</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="return">Devolução</a>
+                            </li>
                         </ul>
-                    </div>
-                </div>
-            </nav>
-        </div>
+                    </div>                
+                </nav>
+            </div>
     </header>
 
     <!--Conteudo-->  
         <main>
-            @yield('content')
+           <div class="container-fluid">
+            <div class="row">
+                @if (session('msg'))
+                    <p class="msg alert alert-success"> {{ session('msg') }}</p3>         
+                @endif  
+                @yield('content')              
+            <div>
+        </div>    
         </main>
 
 

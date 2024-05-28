@@ -11,7 +11,7 @@ class Material extends Model
 
     //Model para buscar informações no banco de dados
     protected $fillable = [
-        'name',  'description', 'qty', 'image',
+        'name', 'description', 'image'
     ];
 
     public function getMaterials(string|null $search = null)
