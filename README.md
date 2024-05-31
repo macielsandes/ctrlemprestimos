@@ -1,6 +1,6 @@
-<h1>Ctrlemprestimo</h1>
+<h1>CTRL EMPRÉSTIMOS</h1>
 
-<p>Este aplicativo foi desenvolvido com o objetivo de permitir o gerenciamento de emprestimo de materiais </p>
+<p>Este aplicativo foi desenvolvido com o objetivo de permitir o gerenciamento de emprestimo de materiais</p>
 
 ## Requisitos do Projeto
 * PHP 8.2 ou superior
