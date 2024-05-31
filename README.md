@@ -29,7 +29,7 @@ cp .env.exemplo .env
 
 No arquivo .env configurar o base de dados para o nome desejado. Exemplo: DB_DATABASE=ctrlemprestimos
 
-Gerar a chave 
+Gerar a chave de configuração
 ```
 php artisan key:generate
 ```
@@ -39,3 +39,9 @@ Gerar as tabelas do banco de dados
 php artisan migrate
 ```
 
+## Rodando o projeto Localmente
+Este comando será util caso se deseje rodar o projeto localmente
+```
+php artisan serve
+```
+<h2> Tela inicial do projeto</h2>
