@@ -7,9 +7,9 @@
 <div>
     <h1>Emprestimo de material</h1>
 </div class="card-body">
-<form action="{{ route('loan.store') }}" method="post">
+<form action="{{ route('loans.store') }}" method="post">
     @csrf
-    @include('loan._partials.form')
+    @include('loans._partials.form')
 </form>
 </div>
 

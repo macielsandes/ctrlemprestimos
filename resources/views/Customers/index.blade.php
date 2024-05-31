@@ -16,11 +16,11 @@
         <caption>Clientes</caption>
         <thead class="table-dark table-striped ">
             <tr>
-                <th scope="col">Id</th>
-                <th scope="col">Primeiro Nome</th>
-                <th scope="col">último Nome</th>                
+                <th scope="col">ID</th>
+                <th scope="col">Nome Completo</th>                                
                 <th scope="col">Usuário</th>
-                <th scope="col">E-mail</th>           
+                <th scope="col">E-mail</th>  
+                <th scope="col">Ação</th>          
             </tr>
         </thead>
 
@@ -28,19 +28,14 @@
             @foreach ($customers as $customer)
                 <tr>
                     <td> {{ $customer->id }}</td>
-                    <td> {{ $customer->firstname }}</td>
-                    <td> {{ $customer->lastname }}</td>
+                    <td> {{ $customer->firstname }} {{ $customer->lastname }}</td>                  
                     <td> {{ $customer->username }}</td>
-                    <td> {{ $customer->email }}</td>
-                    <td> Vazio</td>
-                    <td> Vazio</td>
+                    <td> {{ $customer->email }}</td>                   
                     <td>
                         <a class="btn btn-danger" href="{{ route('customers.show', $customer->id) }}"
                             role="button">Remover</a>
                         <a class="btn btn-primary" href="{{ route('customers.edit', $customer->id) }}"
                             role="button">Editar</a>                           
-                    </td>
-                    <td>                       
                     </td>
                 </tr>
             @endforeach

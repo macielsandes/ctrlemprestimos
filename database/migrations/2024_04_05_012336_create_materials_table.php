@@ -15,23 +15,20 @@ return new class extends Migration
             $table->id();
             $table->string('name')-> unique();   
             $table->text('description');           
-            $table->string('image')-> nullable();                    
+            $table->string('image')-> nullable(); 
+            $table-> boolean('status')->default(false);                   
             $table->timestamps();
         });
 
         Schema::create('loans', function (Blueprint $table) {
-            $table->id();   
-
-            $table->timestamp('loandate');
+            $table->id();  
+            $table->timestamp('loandate');              
             $table->unsignedBigInteger('material_id');           
             $table->foreign('material_id')->references('id')->on('materials')->onDelete('cascade');  
 
             $table->unsignedBigInteger('customer_id');
-            $table->foreign('customer_id')->references('id')->on('customers')->onDelete('cascade');               
-            
-            $table-> boolean('status')->default(true);
-            $table->timestamps();        
-           
+            $table->foreign('customer_id')->references('id')->on('customers')->onDelete('cascade');        
+            $table->timestamps();                     
         });
 
     }

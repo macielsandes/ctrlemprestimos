@@ -54,7 +54,7 @@
                                 <a class="nav-link active" href="/loan">Empréstimos</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" href="return">Devolução</a>
+                                <a class="nav-link active" href="/devolution">Devolução</a>
                             </li>
                         </ul>
                     </div>                

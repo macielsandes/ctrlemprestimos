@@ -1,6 +1,6 @@
 @extends('Layouts.default')
 
-@section('title', ' Cadastrar novo Material')
+@section('title', ' Cadastrar Material')
 
 @section('content')
     <!--Inicio-->

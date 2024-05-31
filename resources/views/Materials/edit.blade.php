@@ -6,7 +6,7 @@
 
 <h2>Editar o Material {{ $material->name }}</h2>
 
-<form action="{{ route('material.update', $material->id) }}" method="post">
+<form action="{{ route('materials.update', $material->id) }}" method="post">
     @method('PUT')
     @include('materials._partials.form')
 </form>

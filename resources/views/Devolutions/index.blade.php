@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="container text-center">
-        <h1>Materiais emprestados </h1>
+        <h1>Listagem de Materiais emprestados</h1>
     </div>
 
     <div class="container-fluid mt-3">
@@ -24,35 +24,37 @@
             </form>
         </div>
     </div>
-   
+    
     <!--Inicio da Tabela-->
     <div class=" container-fluid table-responsive">
-        <table class="table table-bordered">        
+        <table class="table table-bordered">
             <thead class="table-dark">
                 <tr>
-                    <th scope="col">Id</th>
-                    <th scope="col">Nome</th>
-                    <th scope="col">Descrição</th>
-                    <th scope="col">Quantidade</th>
-                    <th scope="col">Imagem</th>
-                    <th scope="col">Ação</th>
+                    <th scope="col">ID</th>
+                    <th scope="col">Material</th>
+                    <th scope="col">Usuário</th> 
+                    <th scope="col">Data do empréstimo</th> 
+                    <th scope="col">Hora do emrpréstimo</th>                         
+                    <th scope="col">status</th>                   
                 </tr>
             </thead>
-            <tbody>
-                @foreach ($materials as $material)
-                    <tr>
-                        <td> {{ $material->id }} </td>
-                        <td> {{ $material->name }} </td>
-                        <td> {{ $material->description }} </td>
-                        <td>{{ $material->qty }} </td>
-                        <td>{{ $material->image }} </td>
-                        <td> <a class="btn btn-danger" href="{{ route('materials.edit', $material->id) }}">Editar</a> 
-                            <a class="btn btn-primary" href="{{ route('materials.show', $material->id) }}">Remover</a> </td>
-                    </tr>
-                @endforeach
-            </tbody>
+            @foreach ($loans as $loan)
+                <tr>
+                    <td> {{ $loan->id }} </td>
+                    <td> {{ $loan->material->name }} </td>
+                    <td> {{ $loan->customer->username}} </td>
+                    <td> {{ date ('d/m/Y', strtotime ($loan->loandate))}} </td>
+                    <td> {{ date ('H:i', strtotime ($loan->loandate))}} </td>                       
+                    <td> <a class="btn btn-primary" href="" 
+                        role="button">Registrar Devolução </a>                
+                    </td>     
+
+                </tr>
+            @endforeach
         </table>
     </div>
+    
+       
 
     <div class="container mt-6">
         <ul class="pagination  justify-content-center">

@@ -16,7 +16,7 @@
       <select name='customer' id='customer' class="form-select">
           <option>Selecione</option>
               @forelse ($customers as $customer)
-                  <option value="{{ $customer->id }}" {{ old ('customer')== $customer->id ? 'selected' : '' }}> {{ $customer ->fistname }} </option>
+                  <option value="{{ $customer->id }}" {{ old ('customer')== $customer->id ? 'selected' : '' }}> {{ $customer ->firstname}} </option>
               @empty
                   <option value="">Nenhum cliente cadastrado! </option>
               @endforelse

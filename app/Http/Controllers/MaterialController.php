@@ -23,7 +23,7 @@ class MaterialController extends Controller
        $this->model = $material;
    }    
     
-   //Controle que direciona para pagina inicial de material
+   //Controle da pagina inicial
     public function index(Request $request)
     {      
         $materials = $this->model

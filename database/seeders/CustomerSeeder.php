@@ -15,54 +15,52 @@ class CustomerSeeder extends Seeder
     public function run(): void
     {
         Customer::create([
-            'fistname' => 'Alice',
+            'firstname' => 'Alice',
             'lastname' => 'Manuela',
             'username' => 'alice.manuela',
             'email' => 'alice.manuela@gmail.com',
         ]);
 
         Customer::create([            
-            'fistname' => 'Beatriz',
+            'firstname' => 'Beatriz',
             'lastname' => 'Pietra',
             'username' => 'beatriz.pietra',
             'email' => 'beatriz.pietra@gmail.com',
         ]);
 
         Customer::create([
-            'fistname' => 'Enzo',
+            'firstname' => 'Enzo',
             'lastname' => 'Vicente',
             'username' => 'enzo.vicente',
             'email' => 'enzo.vicente@outlook.com',
         ]);
 
         Customer::create([        
-            'fistname' => 'Guilherme',
+            'firstname' => 'Guilherme',
             'lastname' => 'Benjamin',
             'username' => 'guilherme.benjamin',
             'email' => 'guilherme.benjamin@outlook.com',
         ]);
 
         Customer::create([        
-            'fistname' => 'Matheus ',
+            'firstname' => 'Matheus ',
             'lastname' => 'Rafael',
             'username' => 'matheus.rafael',
             'email' => 'matheus.rafael@outlook.com',
         ]);
 
         Customer::create([           
-            'fistname' => 'David',
+            'firstname' => 'David',
             'lastname' => 'Bruno',
             'username' => 'david.bruno',
             'email' => 'david.bruno@outlook.com',
         ]);
         
         Customer::create([
-            'fistname' => 'Rodrigo',
+            'firstname' => 'Rodrigo',
             'lastname' => 'Martins',
             'username' => 'rodrigo.martins',
             'email' => 'rodrigo.martins@outlook.com',
-        ]);
-
-        
+        ]);        
     }
 }
