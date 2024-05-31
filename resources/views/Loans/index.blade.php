@@ -3,20 +3,21 @@
 @section('title', 'Empréstimos')
 
 @section('content')
-    <div class="container text-center">
-        <h1>Listagem de Materiais disponíveis para empréstimo</h1>
+    <div class="container border p-3 mt-10">
+        <div class="container-fluid bg-light border p-4 rounded text-center">
+            <h1>Materiais disponíveis para empréstimo</h1>
+        </div>
     </div>
     <div class="container-fluid mt-3">
-        <div class="row py-2">
+        <div class="row ">
             <!--Botao de emprestimo -->
-            <div class="col-md-6">
+            <div class="col">
                 <a class="btn btn-primary" href="{{ route('loans.create') }}" role="button">Novo Empréstimo</a>
             </div>
-        </div>
 
         <!--Div da barra de pesquisa-->
-        <div class="col-md-3">
-            <form action="/material/search" method="get">
+        <div class="col">
+            <form class="d-flex ms-auto p-2 bd-highlight" action="" method="get">
                 <input type="text" id="search" name ="search" class="form-control" placeholder="Pesquisar material">
                 <button class="btn btn-outline-success" type="submit">Pesquisar</button>
             </form>
@@ -24,14 +25,14 @@
     </div>
 
     <!--Inicio da Tabela-->
-    <div class=" container-fluid table-responsive">
+    <div class=" p-3 table-responsive">
         <table class="table table-bordered">
             <thead class="table-dark">
                 <tr>
-                    <th scope="col">ID</th>
+                    <th scope="col">Id</th>
                     <th scope="col">Material</th>                    
-                    <th scope="col"> Status</th>
-                    <th scope="col"> Ação</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Ação</th>
                 </tr>
             </thead>
 
@@ -42,8 +43,9 @@
                     <td> </td>
                     <td> 
                         <a class="btn btn-primary" href="{{ route('loans.edit', $loan->material_id) }}" 
-                        role="button">Registrar Empréstimo</a>
-                        </td>
+                            role="button">Registrar Empréstimo
+                        </a>
+                    </td>
                 </tr>
             @endforeach
         </table>

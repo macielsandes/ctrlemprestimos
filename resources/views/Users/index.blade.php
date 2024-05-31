@@ -4,11 +4,13 @@
 
 @section('content')
 
-<div class="container-fluid border p-3 mt-10">
-    <h1>Listagem dos Usuários</h1>
+<div class="container-fluid p-3 mt-10">
+    <div class="container-fluid bg-light border p-4 rounded  text-center">
+        <h1>Listagem de usuários</h1>
+    </div>
 </div>
-    <div class="row p-3 d-flex bd-highlight">
-        
+    
+<div class="row p-3 d-flex bd-highlight">        
         <!--Botao para cadastro de novo usuario-->
         <div class="col">
             <a class="btn btn-primary" href="{{ route('users.create') }}" role="button"> Novo Usuário</a>
@@ -54,16 +56,15 @@
                         </tr>
                     @endforeach
                 </tbody>
-            </table>
-        </div>
+            </table>        
 
         <div class="container mt-6">
-            <ul class="pagination  justify-content-center">
-                <li class="page-item disabled"><a class="page-link" href="#">Anterior</a></li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item"><a class="page-link" href="#">Próxima</a></li>
+            <ul class="pagination  justify-content-center">                
+                <li class="page-item">
+                    <a class="page-link" href="">
+                    </a>
+                </li>
+                              
             </ul>
         </div>
     </div>    

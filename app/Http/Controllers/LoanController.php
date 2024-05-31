@@ -24,7 +24,7 @@ class LoanController extends Controller
   //Controle da pagina inicial
   public function index(Request $request)
   {
-    $loans = Loan::all();    
+    $loans = Loan::all();
 
     return view('loans.index', compact('loans'));
   }
@@ -55,17 +55,9 @@ class LoanController extends Controller
   public function edit($id)
   {
     if (!$loan= Loan::find($id))
-             return redirect() -> route('loans.index');
-  
-          return view('loans.edit', compact('loan'));
+      return redirect()->route('loans.index');
 
+    return view('loans.edit', compact('loan'));
   }
-
-  //Registrar emprestimos
-
-  //Mostrar itens emprestados
-
-
-  //registrar devolução 
-
+ 
 }

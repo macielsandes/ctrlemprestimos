@@ -4,12 +4,14 @@
 
 @section('content')
 
-    <div class="container text-center">
-        <h2>Listagem de Materiais</h2>
+    <div class="container-fluid border p-3 mt-10">
+        <div class="container-fluid bg-light border p-4 rounded text-center">
+            <h1>Listagem de Materiais</h1>
+        </div>
     </div>
 
     <!-- Container para o botão e barra de pesquisa-->
-    <div class="container-fluid">
+    <div class="container-fluid p-3">
         <div class="row">
             <!--Botao para cadastro de novo usuario-->
             <div class="col">
@@ -18,7 +20,7 @@
 
             <!--Div da barra de pesquisa-->
             <div class="col">
-                <form class=" d-flex ms-auto p-2 bd-highlight" action="{{ route('materials.index') }}" method="get">
+                <form class="d-flex ms-auto p-2 bd-highlight" action="{{ route('materials.index') }}" method="get">
                     <input class="form-control me-2" type="search" name ="search" placeholder="Pesquisar"
                         aria-label="Pesquisar">
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
@@ -28,7 +30,7 @@
     </div>
 
     <!--Inicio da Tabela-->
-    <div class=" container-fluid table-responsive">
+    <div class="p-3 table-responsive">
         <table class="table table-bordered">        
             <thead class="table-dark">
                 <tr>

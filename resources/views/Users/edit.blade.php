@@ -1,14 +1,13 @@
 @extends('Layouts.default')
 
-@section('title', 'Usuario')
+@section('title', 'Usuário')
 
 @section('content')
-
-<h2>Editar o Usuário {{ $user->name }}</h2>
-
-<form action="{{ route('users.update', $user->id) }}" method="post">
-    @method('PUT')
-    @include('users._partials.form')
-</form>
-
+    <div class="container-fluid border p-3 mt-10">
+        <h2>Editar o Usuário {{ $user->name }}</h2>
+    </div>
+    <form action="{{ route('users.update', $user->id) }}" method="post">
+        @method('PUT')
+        @include('users._partials.form')
+    </form>
 @endsection

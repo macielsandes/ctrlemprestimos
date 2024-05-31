@@ -3,20 +3,21 @@
 @section('title', 'Empréstimos')
 
 @section('content')
-    <div class="container text-center">
-        <h1>Listagem de Materiais emprestados</h1>
+    <div class="container border p-3 mt-10">
+        <div class="container-fluid bg-light border p-4 rounded text-center">
+            <h1>Materiais emprestados</h1>
+        </div>
     </div>
 
     <div class="container-fluid mt-3">
-        <div class="row py-2">           
+        <div class="row">           
             <!--Botao de devolucao -->
-            <div class="col-md-6">
+            <div class="col">
                 <a class="btn btn-primary" href="" role="button">Registrar Devolução </a>
-            </div>
-        </div>
+            </div>       
 
         <!--Div da barra de pesquisa-->
-        <div class="col-md-6">
+        <div class="col">
             <form class=" d-flex ms-auto p-2 bd-highlight" action="" method="get">
                 <input class="form-control me-2" type="search" name ="search" placeholder="Pesquisar"
                     aria-label="Pesquisar">
@@ -30,11 +31,11 @@
         <table class="table table-bordered">
             <thead class="table-dark">
                 <tr>
-                    <th scope="col">ID</th>
+                    <th scope="col">Id</th>
                     <th scope="col">Material</th>
                     <th scope="col">Usuário</th> 
                     <th scope="col">Data do empréstimo</th> 
-                    <th scope="col">Hora do emrpréstimo</th>                         
+                    <th scope="col">Hora do empréstimo</th>                         
                     <th scope="col">status</th>                   
                 </tr>
             </thead>
@@ -47,8 +48,7 @@
                     <td> {{ date ('H:i', strtotime ($loan->loandate))}} </td>                       
                     <td> <a class="btn btn-primary" href="" 
                         role="button">Registrar Devolução </a>                
-                    </td>     
-
+                    </td> 
                 </tr>
             @endforeach
         </table>

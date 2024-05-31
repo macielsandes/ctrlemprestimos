@@ -19,6 +19,8 @@ class UserController extends Controller
     //Função responsavel por direcionar a tela inicial
     public function index(Request $request)
     {
+        //$users = User::paginate(15);       
+        
         $users = $this->model
                 ->getUsers(
                     search: $request ->search ?? ''

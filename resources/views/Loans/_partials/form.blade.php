@@ -3,12 +3,10 @@
 <div class="col-md">
   <label for="material" class="form-label">Selecione o material:</label>
   <select name='material' id='material' class="form-select">
-      <option>Selecione</option>
-          @forelse ($materials as $material)
-              <option value="{{ $material->id }}" {{ old ('material')== $material->id ? 'selected' : '' }}> {{ $material ->name }} </option>
-          @empty
-              <option value="">Nenhum material cadastrado!</option>
-          @endforelse
+      <option>Selecione</option>         
+        <option value="{{ $material->id }}" {{ old ('material')== $material->id ? 'selected' : '' }}> 
+             {{ $material ->name }} </option>
+       
   </select>
 
   <div class="col-md">
