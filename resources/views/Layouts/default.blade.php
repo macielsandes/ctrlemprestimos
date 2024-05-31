@@ -19,71 +19,66 @@
     <!--Meu CSS do projeto-->
     <link rel="stylesheet" href="/css/styles.css">
 
-     <!--Meu CSS do projeto-->
-     <link rel="stylesheet" href="/js">
+    <!--Meu CSS do projeto-->
+    <link rel="stylesheet" href="/js">
 
 
     <title>@yield('title') - Controle de Empréstimos</title>
 </head>
 
 <body>
-    
     <header>
-        <div class="container-fluid bg-dark" id="nav-container">
-            <nav class="navbar navbar-expand-lg bg-dark border-bottom border-body" aria-label="Seg navbar" data-bs-theme="dark">              
-                    <a class=" navbar-brand" href="/dashboard">CTRL EMPRÉSTIMOS</a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-links"
-                        aria-controls="navbars-links" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse justify-content-end" id="navbar-links">
-                        <ul class="navbar-nav me-auto mb-2 mb-sm-0">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="/dashboard">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" href="/user">Usuários</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" href="/customer">Clientes</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" href="/material">Materiais</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" href="/loan">Empréstimos</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" href="/devolution">Devolução</a>
-                            </li>
-                        </ul>
-                    </div>                
-                </nav>
+        <nav class="navbar navbar-expand-lg bg-dark" aria-label="Seg navbar" data-bs-theme="dark">
+            <div class="container-fluid">
+                <a class=" navbar-brand" href="/dashboard">CTRL EMPRÉSTIMOS</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-links"
+                    aria-controls="navbars-links" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbar-links">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/dashboard">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/user">Usuários</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/customer">Clientes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/material">Materiais</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/loan">Empréstimos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/devolution">Devolução</a>
+                        </li>
+                    </ul>
+                </div>
+                                
+                
+
             </div>
+        </nav>
     </header>
 
-    <!--Conteudo-->  
-        <main>
-           <div class="container-fluid">
+    <!--Conteudo-->
+    <main>
+        <div class="container-fluid">
             <div class="row">
                 @if (session('msg'))
-                    <p class="msg alert alert-success"> {{ session('msg') }}</p3>         
-                @endif  
-                @yield('content')              
+                    <p class="msg alert alert-success"> {{ session('msg') }}</p3>
+                @endif
+                @yield('content')
             <div>
-        </div>    
-        </main>
-
-
+        </div>
+    </main>
+    
     <footer>
-        <div class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top"">
-            <p class="col-md-4 mb-0 text-muted">CTRL Empréstimos; {{ date('Y') }}</p>
-            <a href="/"
-                class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
-                <svg class="bi me-2" width="40" height="32">
-                    <use xlink:href="#bootstrap"></use>
-                </svg>
-            </a>
+        <div class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+            <p class="col py-3 my-4 text-muted">CTRL Empréstimos;{{ date('Y')}}</p>
         </div>
     </footer>
 
@@ -95,4 +90,5 @@
         integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous">
     </script>
 </body>
+
 </html>

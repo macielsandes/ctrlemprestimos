@@ -8,11 +8,10 @@
         <div class="container-fluid bg-light border p-4 rounded ">
             <h1>Home</h1>
         </div>
-    </div>
-    
+    </div>    
     <div class="container mt-5">
         <div class="row">
-            <div class="col-sm-4">
+            <div class="col">
                 <div class="card" style="width: 18rem;">
                     <img src="..." class="card-img-top" alt="...">
                     <div class="card-body">
@@ -24,7 +23,7 @@
                     </div>
                 </div>
             </div>   
-            <div class="col-sm-4">
+            <div class="col">
                 <div class="card" style="width: 18rem;">
                     <img src="..." class="card-img-top" alt="...">
                     <div class="card-body">
@@ -36,7 +35,7 @@
                     </div>
                 </div>  
             </div>      
-            <div class="col-sm-4">
+            <div class="col">
             <div class="card" style="width: 18rem;">
                 <img src="..." class="card-img-top" alt="...">
                 <div class="card-body">

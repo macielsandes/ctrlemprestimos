@@ -5,7 +5,7 @@
 @section('content')
     <div class="container border p-3 mt-10">
         <div class="container-fluid bg-light border p-4 rounded text-center">
-            <h1>Materiais disponíveis para empréstimo</h1>
+            <h1>Materiais disponíveis</h1>
         </div>
     </div>
     <div class="container-fluid mt-3">
@@ -30,8 +30,7 @@
             <thead class="table-dark">
                 <tr>
                     <th scope="col">Id</th>
-                    <th scope="col">Material</th>                    
-                    <th scope="col">Status</th>
+                    <th scope="col">Material</th>
                     <th scope="col">Ação</th>
                 </tr>
             </thead>
@@ -40,7 +39,7 @@
                 <tr>
                     <td> {{ $loan->id }} </td>
                     <td> {{ $loan->material->name }} </td>                   
-                    <td> </td>
+                  
                     <td> 
                         <a class="btn btn-primary" href="{{ route('loans.edit', $loan->material_id) }}" 
                             role="button">Registrar Empréstimo
