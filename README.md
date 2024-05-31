@@ -7,3 +7,8 @@ clonar o codigo do repositório
 ```
 git clone https://github.com/macielsandes/ctrlemprestimos.git
 ```
+
+Na pasta do projeto, criar criar o arquivo .env do arquivo .env.example
+```
+cp .env.exemplo .env
+``` 
