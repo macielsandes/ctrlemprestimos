@@ -41,8 +41,8 @@
                     <td> {{ $loan->material->name }} </td>                   
                   
                     <td> 
-                        <a class="btn btn-primary" href="{{ route('loans.edit', $loan->material_id) }}" 
-                            role="button">Registrar Empréstimo
+                        <a class="btn btn-primary" href="{{ route('loans.edit', $loan->id) }}" 
+                            role="button">Emprestar Material
                         </a>
                     </td>
                 </tr>

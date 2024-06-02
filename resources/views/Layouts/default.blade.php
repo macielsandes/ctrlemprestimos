@@ -6,12 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- CSS Bootstrap-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" 
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
-    <!-- Icons Bootstrap-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
+   
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
@@ -30,7 +27,7 @@
     <header>
         <nav class="navbar navbar-expand-lg bg-dark" aria-label="Seg navbar" data-bs-theme="dark">
             <div class="container-fluid">
-                <a class=" navbar-brand" href="/dashboard">CTRL EMPRÉSTIMOS</a>
+                <a class=" navbar-brand" href="">CTRL EMPRÉSTIMOS</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-links"
                     aria-controls="navbars-links" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -41,19 +38,19 @@
                             <a class="nav-link active" aria-current="page" href="/dashboard">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="/user">Usuários</a>
+                            <a class="nav-link" href="/user">Usuários</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="/customer">Clientes</a>
+                            <a class="nav-link" href="/customer">Clientes</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="/material">Materiais</a>
+                            <a class="nav-link" href="/material">Materiais</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="/loan">Empréstimos</a>
+                            <a class="nav-link" href="/loan">Empréstimos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="/devolution">Devolução</a>
+                            <a class="nav-link" href="/devolution">Devolução</a>
                         </li>
                     </ul>
                 </div>
@@ -83,12 +80,11 @@
     </footer>
 
     <!-- Js Bootstrap-->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
-        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous">
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" 
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" 
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    
 </body>
 
 </html>
