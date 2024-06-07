@@ -19,19 +19,24 @@ class LoanController extends Controller
   public function ___construct(Loan $loan)
   {
     $this->model = $loan;
-  }
+  } 
 
   //Controle da pagina inicial
   public function index(Request $request)
   {
-    $loans = Loan::all();
-
-    return view('loans.index', compact('loans'));
+    //forma de instanciar material
+    $materials = Material::all();
+    
+    //$materials = Material::orderby('id', 'asc')->get();
+    //return view('loans.index', compact('loans'));
+   
+    return view('loans.index', compact('materials'));
   }
 
-  public function create()
+  public function create(Request $request)
   {
-
+    $materials = new Material;
+    
     //recupera materiais cadastrados 
     $materials = Material::orderby('name', 'asc')->get();
 
@@ -44,20 +49,29 @@ class LoanController extends Controller
   // Função responsavel por salvar emrpestimo
   public function store(Request $request)
   {
-    $loan = new Loan;
-    $loan->material_id = $request->material;
-    $loan->customer_id = $request->customer;
-    $loan->save();
+    $loans = new Loan;
+    $materials = Material::all();
 
-    return view('loans.index', compact('loans'));
+    $loans ->material_id = $request->material;
+    $loans ->customer_id = $request->customer;
+    $loans ->save();
+
+    //return view('loans.index', compact('loans'));
+
+    return view('loans.index', compact('materials'));
+    
   }
 
   public function edit($id)
   {
-    if (!$loan= Loan::find($id))
+    //$materials = new Material();
+    $materials = Material::all();
+
+    if (!$materials = Material::find($id))
       return redirect()->route('loans.index');
 
-    return view('loans.edit', compact('loan'));
+    return view('loans.edit', compact('materials'));
   }
- 
+
+  //function quantydeMaterial()
 }

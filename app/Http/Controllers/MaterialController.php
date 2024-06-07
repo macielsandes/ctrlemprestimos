@@ -23,28 +23,28 @@ class MaterialController extends Controller
        $this->model = $material;
    }    
     
-   //Controle da pagina inicial
+   // Pagina inicial e lista os dados cadastrados
     public function index(Request $request)
     {      
         $materials = $this->model
         ->getMaterials(
             search: $request ->search ?? ''
         );
-
         return view ('materials.index', compact('materials'));       
     }
 
      //controle para mostrar material
      public function show($id)
      {
-         //opção 1
+         //opção 1 -> Permite buscar determinado ID de usuario
         //$user = User::where ('id',$id) ->first();
-        //opção 2
+        
+        //opção 2-> Procura um usuario e senão o entre direcionar para pagina inicial com todos os usuarios
         /* if(!$material= Material::find($id))
             return redirect() -> route('materials.index');*/
 
         //opção 3
-        $material = Material::findOrFail($id);
+        $material = Material::find($id);
          
          //se for passado um ID de um material valido, direciona para a tela de edição de usuario
          return view('materials.show', compact('material'));
@@ -56,10 +56,7 @@ class MaterialController extends Controller
        return view('materials.create');    
     }  
 
-    /** 
-     * Função responsavel por receber as informações do formulario 
-     * e realizar o cadastro no banco de dados
-    */
+    // Salvando um material no banco de dados
     public function store(Request $request)
     {
         // uma das formas de se salvar dados no banco de dados
@@ -88,39 +85,37 @@ class MaterialController extends Controller
     
     }
 
-     //Editando um usuário
+     //Editando um Material
     public function edit($id)
       {
           if (!$material= Material::find($id))
-             return redirect() -> route('materials.index');
+             return redirect()-> route('materials.index');
   
           return view('materials.edit', compact('material'));
       }
 
       //Atualizando os registros de um usuario
-    /*public function update(Request $request, $id)
+    public function update(Request $request, $id)
     {
-        if(!$user = Material::find($id))
-           return redirect()-> route('materials.index');
+        if(!$material = Material::find($id))
+           return redirect()->route('materials.index');
         
-        $data = $request->only('name', 'email');
-        if ($request->password)
-            $data['password'] = bcrypt($request->password);
-        
-        $user->update($data);
+        $data = $request->only('name', 'description', 'images');
+                
+        $material->update($data);
 
-        return redirect() -> route('users.index');
-    } */
+        return redirect() -> route('materials.index')->with('msg', 'Material atualizado com sucesso!');
+    }
 
-    //Excluir usuario do dando de dados
+    //Excluindo Material do banco de dados
     public function destroy($id)
     {
-        if(!$user= Material::find($id))
+        if(!$material= Material::findOrFail($id))
            return redirect() -> route('materials.index');
         
-        $user->delete();
+        $material->delete();
 
-        return redirect() -> route('materials.index');
+        return redirect()->route('materials.index');
     }
    
 }

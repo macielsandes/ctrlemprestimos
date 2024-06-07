@@ -13,7 +13,7 @@
         <div class="row">           
             <!--Botao de devolucao -->
             <div class="col">
-                <a class="btn btn-primary" href="" role="button">Registrar Devolução </a>
+                <a class="btn btn-primary" href="{{ route('devolutions.create') }}" role="button">Registrar Devolução </a>
             </div>       
 
         <!--Div da barra de pesquisa-->
@@ -46,7 +46,7 @@
                     <td> {{ $loan->customer->username}} </td>
                     <td> {{ date ('d/m/Y', strtotime ($loan->loandate))}} </td>
                     <td> {{ date ('H:i', strtotime ($loan->loandate))}} </td>                       
-                    <td> <a class="btn btn-primary" href="" 
+                    <td> <a class="btn btn-primary" href="{{ route('devolutions.edit', $loan->id) }}" 
                         role="button">Registrar Devolução </a>                
                     </td> 
                 </tr>

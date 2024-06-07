@@ -32,9 +32,9 @@
                 <tr>
                     <th scope="col">ID</th>
                     <th scope="col">Nome Completo</th>
-                    <th scope="col">Usuário</th>
+                    <th scope="col">Nome de usuário</th>
                     <th scope="col">E-mail</th>
-                    <th scope="col">Ação</th>
+                    <th scope="col">Ações</th>
                 </tr>
             </thead>
 

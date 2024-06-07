@@ -53,16 +53,15 @@
                             <a class="nav-link" href="/devolution">Devolução</a>
                         </li>
                     </ul>
-                </div>
-                                
-                
-
+                </div>                            
             </div>
         </nav>
     </header>
 
     <!--Conteudo-->
     <main>
+
+        <!--Remover esta DIV e deixar apenas o yield-->
         <div class="container-fluid">
             <div class="row">
                 @if (session('msg'))

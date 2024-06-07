@@ -47,14 +47,17 @@ Route::get('/customer/create', [CustomerController::class, 'create']) -> name('c
 Route::post('/customer', [CustomerController::class, 'store']) -> name('customers.store');
 Route::get('/customer/{id}', [CustomerController::class, 'show'])-> name('customers.show');
 
-Route::put('/loan/{id}',[LoanController::class, 'update']) -> name('loans.update');
+//Route::put('/loan/{id}',[LoanController::class, 'update']) -> name('loans.update');
+Route::get('/loan/{id}/', [LoanController::class, 'edit']) -> name('loans.edit');
 Route::get('/loan', [LoanController::class, 'index']) -> name('loans.index');
 Route::get('/loan/create', [LoanController::class, 'create']) -> name('loans.create'); 
 Route::post('/loan', [LoanController::class, 'store']) -> name('loans.store');
-Route::get('/loan/{id}', [LoanController::class, 'edit']) -> name('loans.edit');
 
+//Route::get('/devolution/{id}',[DevolutionController::class, 'update']) -> name('devolutions.update');
+Route::get('/devolution/{$id}/edit', [DevolutionController::class, 'edit']) -> name('devolutions.edit');
 Route::get('/devolution', [DevolutionController::class, 'index']) -> name('devolutions.index');
-Route::get('/devolution/create', [DevolutionController::class, 'create']) -> name('devolutions.index');
+Route::get('/devolution/create', [DevolutionController::class, 'create']) -> name('devolutions.create');
+
 
 Route::get('/dashboard', [DashboardController::class, 'index'])-> name('dashboards.index');
 

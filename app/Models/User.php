@@ -47,10 +47,18 @@ class User extends Authenticatable
        $user = $this->where(function ($query) use ($search){
             if ($search){
                 $query->where('email', $search);
-                $query->orwhere('name', 'LIKE', "%{$search}%");
+                $query->orwhere('firstname', 'LIKE', "%{$search}%");
             }
         })->get();    
 
         return $user;
-    }    
+    }  
+    // Este metodo permite concatenar o nome
+    /**
+     * @return string
+     */
+    public function getFullNameAttribute()
+    {
+        return $this->firstname. ' '. $this->lastname;
+    }
 }

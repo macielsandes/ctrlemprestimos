@@ -6,7 +6,10 @@
 
 <div class="container-fluid border p-3 mt-10">
     <h1>Registrar Empréstimo</h1>
-    {{ $loan->id}}
+    <form action="{{ route('loans.update', $materials->id)}}" method="post">
+        @csrf
+        @include('Loans._partials.form')
+    </form>
 </div>
 
 @endsection

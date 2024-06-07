@@ -19,7 +19,7 @@ class Customer extends Model
        $customer = $this->where(function ($query) use ($search){
             if ($search){
                 $query->where('username', $search);
-                $query->orwhere('name', 'LIKE', "%{$search}%");
+                $query->orwhere('firstname', 'LIKE', "%{$search}%");
             }
         })->get();  
         

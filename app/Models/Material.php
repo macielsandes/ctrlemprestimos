@@ -9,9 +9,11 @@ class Material extends Model
 {
     use HasFactory;
 
+    protected $table = 'materials';
+
     //Model para buscar informações no banco de dados
     protected $fillable = [
-        'name', 'description', 'image'
+        'name', 'description', 'image', 'status',
     ];
 
     public function getMaterials(string|null $search = null)
@@ -25,10 +27,12 @@ class Material extends Model
         return $materials;
     }  
     
+    // Relaciona o modelo para emprestar para um cliente
     public function loanCustomer()
     {
         return $this->belongsToMany(Customer::class);
-    }   
+    }     
+    
    
    
 }

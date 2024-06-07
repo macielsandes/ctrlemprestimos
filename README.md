@@ -20,7 +20,7 @@ git clone https://github.com/macielsandes/ctrlemprestimos.git
 ```
 composer install 
 ```
-3. Criar uma copia do .env.example para criar os arquivos de configuração
+3. Duplicar o arquivo .env
 ```
 cp .env.exemplo .env
 ``` 
