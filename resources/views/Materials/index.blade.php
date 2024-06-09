@@ -4,7 +4,18 @@
 
 @section('content')
 
-    <div class="container-fluid border p-3 mt-10">
+  <!--Remover esta DIV e deixar apenas o yield-->
+  <div class="container-fluid">
+    <div class="row">
+        @if (session('msg'))
+            <p class="msg alert alert-success"> {{ session('msg') }}</p3>
+        @endif
+       
+    <div>
+</div>   
+
+
+<div class="container-fluid border p-3 mt-10">
         <div class="container-fluid bg-light border p-4 rounded text-center">
             <h1>Listagem de Materiais</h1>
         </div>

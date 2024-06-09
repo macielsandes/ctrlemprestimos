@@ -4,11 +4,14 @@
 
 @section('content')
 
-    <div class="container-fluid border p-3 mt-10">
-        <div class="container-fluid bg-light border p-4 rounded ">
-            <h1>Home</h1>
-        </div>
-    </div>    
+    <div class="container-fluid bg-light border p-4 rounded border p-3 mt-10">
+        <div class="row"> 
+            <div class="col">         
+                <h1>Home</h1>    
+            </div>
+        </div>     
+    </div>  
+    
     <div class="container mt-5">
         <div class="row">
             <div class="col">

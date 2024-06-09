@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('materials', function (Blueprint $table) {
             $table->id();
             $table->string('name')-> unique();   
-            $table->text('description');           
+            $table->text('description');            
             $table->string('image')-> nullable(); 
             $table-> boolean('status')->default(true);                   
             $table->timestamps();

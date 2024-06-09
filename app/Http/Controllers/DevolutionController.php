@@ -3,27 +3,30 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use App\Models\Loan;
 use App\Models\Material;
+use App\Models\Customer;
 
-class DevolutionController extends Controller
-{
-
+class DevolutionController extends Controller{
+    
+ 
     public function index(Request $request)
     {
-        //$loans = Loan::all();
-        (($loans= Loan::with('material_id', 'customer_id' )->get());
-        //return view('devolutions.index', compact('loans'));
+      $materials = Material::all();
+      $customers = Customer::all();
+      
+      $loans = Loan::all();
+      
+      $loans= Loan::with('material_id', 'customer_id' )->get();
+        return view('devolutions.index', compact('loans'));
     }
 
   public function create(Request $request)
     {
-      $= new Loan;
-     
-      $devolutions = 
+          
+      //$devolutions = 
 
-      return view('devolutions.create', compact('materials', 'customers'));
+      //return view('devolutions.create', compact('materials', 'customers'));
     }
 
   public function store (Request $request){

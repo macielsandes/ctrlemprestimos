@@ -13,18 +13,11 @@ use App\Models\Customer;
  */
 class LoanController extends Controller
 {
-  protected $model;
-
-  //Contrutor da classe
-  public function ___construct(Loan $loan)
-  {
-    $this->model = $loan;
-  } 
-
-  //Controle da pagina inicial
+ 
+   //Controle da pagina inicial
   public function index(Request $request)
   {
-    //forma de instanciar material
+    //cria e estrutura de Material
     $materials = Material::all();
     
     //$materials = Material::orderby('id', 'asc')->get();
@@ -33,7 +26,7 @@ class LoanController extends Controller
     return view('loans.index', compact('materials'));
   }
 
-  public function create(Request $request)
+  public function create()
   {
     $materials = new Material;
     
