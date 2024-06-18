@@ -18,7 +18,7 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'firstname', 'lastname', 'email', 'password',
+        'firstname', 'lastname', 'username', 'email', 'password',
     ];
 
     /**
@@ -46,7 +46,7 @@ class User extends Authenticatable
     {
        $user = $this->where(function ($query) use ($search){
             if ($search){
-                $query->where('email', $search);
+                $query->where('username', $search);
                 $query->orwhere('firstname', 'LIKE', "%{$search}%");
             }
         })->get();    

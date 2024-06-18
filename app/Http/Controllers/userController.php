@@ -57,7 +57,7 @@ class UserController extends Controller
         $data['password'] = bcrypt($request->password);
         
         User::create($data);
-        return redirect()-> route ('users.index');
+        return redirect()-> route('users.index')->with('msg', 'Usuário cadastrado com sucesso!'); 
     }
 
     //Editando um usuário

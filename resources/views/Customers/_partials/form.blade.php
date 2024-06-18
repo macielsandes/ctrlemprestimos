@@ -1,19 +1,31 @@
 @csrf
 <!--Forms de usuario-->
-
-<fieldset>
-    <label for="firstname">Nome:</label>
-    <input type="text" name="firstname" id="firstname" value="{{ $customer->firstname ?? old('firstname') }}">
-
-    <label for="lastname">Sobrenome:</label>
-    <input type="text" name="lastname" id="lastname" value="{{ $customer->lastname ?? old('lastname') }}">
-
-    <label for="username">Username:</label>
-    <input type="text" name="username" id="username" value="{{ $customer->username ?? old('username') }}">
-
-    <label for="email">E-mail:</label>
-    <input type="email" name="email" id="email" value="{{ $customer->email ?? old('email') }}">
-</fieldset>
-<div>
-    <button type="submit">Salvar</button>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <label for="firstname" class="form-label">Nome:</label>
+            <input class="form-control" type="text" name="firstname" id="firstname" value="{{ $customer->firstname ?? old('firstname') }}">
+        </div>
+        <div class="col">
+            <label for="lastname" class="form-label">Sobrenome:</label>
+            <input class="form-control" type="text" name="lastname" id="lastname" value="{{ $customer->lastname ?? old('lastname') }}">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <label for="username" class="form-label">Username:</label>
+            <input class="form-control" type="text" name="username" id="username" value="{{ $customer->username ?? old('username') }}">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <label for="email" class="form-label">E-mail:</label>
+            <input class="form-control" type="email" name="email" id="email" value="{{ $customer->email ?? old('email') }}">
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col">
+            <button type="submit" class="btn btn-secondary">Salvar</button>
+        </div>
+    </div>
 </div>

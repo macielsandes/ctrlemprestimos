@@ -2,15 +2,15 @@
 <!--Forms de cadastro de Material-->
 <div>
     <div class="form-group mb-3 mt-3">
-        <label for="fname">Nome:</label>
+        <label for="name">Nome:</label>
         <input type="text" class="form-control" id="name" name="name"
-            placeholder="Nome de identificação do material"     
+            placeholder="Nome de identificação"     
                 value="{{  $material->name ?? old ('name')}}">
     </div>
     <div class="form-group mb-3 mt-3">
-        <label for="fdescription">Descrição:</label>
+        <label for="description">Descrição:</label>
         <textarea name="description" id="description" rows="10" class="form-control"
-            placeholder="Descrição do material"
+            placeholder="Uma breve descrição do material"
                 value="{{ $material->description ?? old ('description')}}"> 
         </textarea>
     </div>

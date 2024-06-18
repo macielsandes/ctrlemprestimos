@@ -8,11 +8,11 @@
   <div class="container-fluid">
     <div class="row">
         @if (session('msg'))
-            <p class="msg alert alert-success"> {{ session('msg') }}</p3>
-        @endif
-       
-    <div>
-</div>   
+            <p class="msg alert alert-success"> {{ session('msg') }}</p>
+        @endif   
+        <p class="msg alert alert-success">Erro </p>
+        <div>
+    </div>   
 
 
 <div class="container-fluid border p-3 mt-10">

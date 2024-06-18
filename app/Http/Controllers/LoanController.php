@@ -14,11 +14,11 @@ use App\Models\Customer;
 class LoanController extends Controller
 {
  
-   //Controle da pagina inicial
+   //Controle da pagina incial de emprestimo
   public function index(Request $request)
   {
-    //cria e estrutura de Material
-    $materials = Material::all();
+    //instacia a classe material
+    $materials = Material::all();    
     
     //$materials = Material::orderby('id', 'asc')->get();
     //return view('loans.index', compact('loans'));
@@ -28,7 +28,8 @@ class LoanController extends Controller
 
   public function create()
   {
-    $materials = new Material;
+    //$materials = new Material;
+    //$customers = new Customer;
     
     //recupera materiais cadastrados 
     $materials = Material::orderby('name', 'asc')->get();
