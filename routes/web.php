@@ -3,10 +3,11 @@
 use App\Http\Controllers\{
     MaterialController,
     UserController,
-    CustomerController,   
+    CustomerController,
     DashboardController,
-    DevolutionController,
     LoanController,
+    DevolutionController,
+
 };
 use App\Models\Loan;
 use Illuminate\Auth\Events\Registered;
@@ -50,7 +51,7 @@ Route::get('/customer/{id}', [CustomerController::class, 'show'])-> name('custom
 Route::put('/loan/{id}',[LoanController::class, 'update']) -> name('loans.update');
 Route::get('/loan/{id}/', [LoanController::class, 'edit']) -> name('loans.edit');
 Route::get('/loan', [LoanController::class, 'index']) -> name('loans.index');
-Route::get('/loan/create', [LoanController::class, 'create']) -> name('loans.create'); 
+Route::get('/loan/create', [LoanController::class, 'create']) -> name('loans.create');
 Route::post('/loan', [LoanController::class, 'store']) -> name('loans.store');
 
 //Route::get('/devolution/{id}',[DevolutionController::class, 'update']) -> name('devolutions.update');

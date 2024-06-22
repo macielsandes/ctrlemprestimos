@@ -3,7 +3,6 @@
 @section('title', 'Cliente')
 
 @section('content')
-
 <div>
     <h1>Emprestimo de material</h1>
 </div class="card-body">

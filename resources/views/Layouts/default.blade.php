@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="/css/styles.css">
 
     <!--Meu CSS do projeto-->
-    <link rel="stylesheet" href="/js">
+    <!--<link rel="stylesheet" href="/js">-->
 
 
     <title>@yield('title') - Controle de Empréstimos</title>

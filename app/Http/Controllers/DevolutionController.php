@@ -8,23 +8,20 @@ use App\Models\Material;
 use App\Models\Customer;
 
 class DevolutionController extends Controller{
-    
- 
+
     public function index(Request $request)
     {
-      $materials = Material::all();
-      $customers = Customer::all();
-      
-      $loans = Loan::all();
-      
-      $loans= Loan::with('material_id', 'customer_id' )->get();
-        return view('devolutions.index', compact('loans'));
+
+      $loans = Loan::with(['material', 'customer'])->get();
+
+      //$loans= Loan::with('material_id', 'customer_id' )->get();
+       return view('devolutions.index', compact('loans'));
     }
 
   public function create(Request $request)
     {
-          
-      //$devolutions = 
+
+      //$materials
 
       //return view('devolutions.create', compact('materials', 'customers'));
     }
@@ -35,9 +32,9 @@ class DevolutionController extends Controller{
 
   }
 
-  //carrega formulario de deloução de emprestimo  
+  //carrega formulario de deloução de emprestimo
   public function edit($id)
-  {    
+  {
     $loans = Loan::all();
 
     if($loans = Loan::find($id))
@@ -50,7 +47,7 @@ class DevolutionController extends Controller{
 
     $loans = Loan::all();
     $materials = Material::all();
-    
+
     $loans ->material_id = $request->material;
     $loans ->customer_id = $request->customer;
     $loans ->save();

@@ -9,20 +9,20 @@ use App\Models\Customer;
 
 /**
  * Controle responsavel por gerenciar toda a parte de emprestimo de material
- * 
+ *
  */
 class LoanController extends Controller
 {
- 
+
    //Controle da pagina incial de emprestimo
   public function index(Request $request)
   {
     //instacia a classe material
-    $materials = Material::all();    
-    
+    $materials = Material::all();
+
     //$materials = Material::orderby('id', 'asc')->get();
     //return view('loans.index', compact('loans'));
-   
+
     return view('loans.index', compact('materials'));
   }
 
@@ -30,14 +30,14 @@ class LoanController extends Controller
   {
     //$materials = new Material;
     //$customers = new Customer;
-    
-    //recupera materiais cadastrados 
-    $materials = Material::orderby('name', 'asc')->get();
+
+    //recupera materiais cadastrados
+   dd($materials = Material::orderby('name', 'asc')->get());
 
     //recuperar clientes cadastros
-    $customers = Customer::orderby('username', 'asc')->get();
+    //$customers = Customer::orderby('username', 'asc')->get();
 
-    return view('loans.create', compact('materials', 'customers'));
+    //return view('loans.create', compact('materials', 'customers'));
   }
 
   // Função responsavel por salvar emrpestimo
@@ -53,7 +53,7 @@ class LoanController extends Controller
     //return view('loans.index', compact('loans'));
 
     return view('loans.index', compact('materials'));
-    
+
   }
 
   public function edit($id)

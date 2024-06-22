@@ -23,8 +23,7 @@
             </form>
         </div>
     </div>
-    <div>
-        
+    <div>        
         <!--Inicio da Tabela-->
         <div class=" p-3 table-responsive">
             <table class="table table-bordered">
@@ -42,13 +41,12 @@
                         <th scope="row">{{ $material->id }}</th>
                         <td> {{ $material->name }} </td>
                         <td> {{ $material->description }} </td>
-                        <td><img src="img/materials/{{ $material->image }}" class="img-responsive"
-                                style="max-height:30px; max-width:30px" alt="" srcset="">
-                        </td>
+                       <!-- <td>
+                            <img src="img/materials/{{ $material->image }}" 
+                                class="rounded mx-auto d-block" style="max-height:30px; max-width:30px" alt="" srcset="">
+                        </td>-->
                         <td>
-                            <a class="btn btn-primary" href="{{ route('loans.edit', $material->id) }}"
-                                role="button">Emprestar Material
-                            </a>
+                            <a class="btn btn-primary" href="{{ route('loans.edit', $material->id) }}" role="button">Emprestar Material</a>
                         </td>
                     </tr>
                 @endforeach
