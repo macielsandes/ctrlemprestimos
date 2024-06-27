@@ -17,27 +17,20 @@ class LoanController extends Controller
    //Controle da pagina incial de emprestimo
   public function index(Request $request)
   {
-    //instacia a classe material
-    $materials = Material::all();
-
-    //$materials = Material::orderby('id', 'asc')->get();
-    //return view('loans.index', compact('loans'));
-
-    return view('loans.index', compact('materials'));
+    //instancia a classe loans
+    $loans = Loan::all();
+    return view('loans.index', compact('loans'));
   }
 
   public function create()
   {
-    //$materials = new Material;
-    //$customers = new Customer;
-
-    //recupera materiais cadastrados
-   dd($materials = Material::orderby('name', 'asc')->get());
+   //recupera materiais cadastrados
+   $materials = Material::orderby('name', 'asc')->get();
 
     //recuperar clientes cadastros
-    //$customers = Customer::orderby('username', 'asc')->get();
+   $customers = Customer::orderby('username', 'asc')->get();
 
-    //return view('loans.create', compact('materials', 'customers'));
+    return view('loans.create', compact('materials', 'customers'));
   }
 
   // Função responsavel por salvar emrpestimo

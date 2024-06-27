@@ -5,9 +5,9 @@
     <div class="col">
         <label for="material" class="form-label">Selecione o material:</label>
             <select name='material' id='material' class="form-select">
-            <option>Selecione</option>  
+            <option>Selecione</option>
             @forelse ($materials as $material)
-                <option value="{{ $material->id }}" {{ old ('material')== $material->id ? 'selected': '' }}> 
+                <option value="{{ $material->id }}" {{ old ('material')== $material->id ? 'selected': '' }}>
                     {{ $material->name }} </option>
             @empty
                 <option value="">Nenhum material ainda cadastrado!</option>
@@ -15,17 +15,16 @@
   </select>
 
   <div class="col-md">
-      <label for="customer" class="fo
-      rm-label">Selecione o usuário:</label>
+      <label for="customer" class="form-label">Selecione o usuário:</label>
       <select name='customer' id='customer' class="form-select">
           <option>Selecione</option>
               @forelse ($customers as $customer)
-                  <option value="{{ $customer->id }}" {{ old ('customer')== $customer->id ? 'selected' : '' }}> 
+                  <option value="{{ $customer->id }}" {{ old ('customer')== $customer->id ? 'selected' : '' }}>
                         {{ $customer->username }} </option>
               @empty
                   <option value="">Nenhum cliente ainda cadastrado!</option>
               @endforelse
       </select>
 
-      <button type="submit" class="btn btn-secondary">Salvar</button>  
+      <button type="submit" class="btn btn-secondary">Salvar</button>
 </div>

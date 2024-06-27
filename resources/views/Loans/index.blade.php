@@ -23,7 +23,7 @@
             </form>
         </div>
     </div>
-    <div>        
+    <div>
         <!--Inicio da Tabela-->
         <div class=" p-3 table-responsive">
             <table class="table table-bordered">
@@ -36,17 +36,17 @@
                         <th scope="col">Ação</th>
                     </tr>
                 </thead>
-                @foreach ($materials as $material)
+                @foreach ($loans as $loan)
                     <tr>
-                        <th scope="row">{{ $material->id }}</th>
-                        <td> {{ $material->name }} </td>
-                        <td> {{ $material->description }} </td>
-                       <!-- <td>
-                            <img src="img/materials/{{ $material->image }}" 
+                        <th scope="row">{{ $loan->id }}</th>
+                        <td> {{ $loan->name }} </td>
+                        <td> {{ $loan->description }} </td>
+                         <td>
+                            <img src="img/materials/{{ $loan->image }}"
                                 class="rounded mx-auto d-block" style="max-height:30px; max-width:30px" alt="" srcset="">
-                        </td>-->
+                        </td>
                         <td>
-                            <a class="btn btn-primary" href="{{ route('loans.edit', $material->id) }}" role="button">Emprestar Material</a>
+                            <a class="btn btn-primary" href="{{ route('loans.edit', $loan->id) }}" role="button">Emprestar Material</a>
                         </td>
                     </tr>
                 @endforeach

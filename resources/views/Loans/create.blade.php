@@ -3,14 +3,14 @@
 @section('title', 'Emprestimo de Material')
 
 @section('content')
-
-<div class="container-fluid border p-3 mt-10">
-    <h1>Empréstimo de material</h1>
-    <form action="{{ route('loans.store') }}" method="post" enctype="multipart/form-data">
-        @csrf
-        @include('loans._partials.form')
-    </form>
-</div>
-
-@endsection
-
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <h1>Empréstimo de material</h1>
+            </div>
+        </div>
+        <form action="{{ route('loans.store') }}" method="post">
+            @csrf
+            @include('loans._partials.form')
+        </form>
+    @endsection
