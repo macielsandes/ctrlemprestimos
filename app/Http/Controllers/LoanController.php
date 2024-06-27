@@ -9,30 +9,29 @@ use App\Models\Customer;
 
 /**
  * Controle responsavel por gerenciar toda a parte de emprestimo de material
- * 
+ *
  */
 class LoanController extends Controller
 {
-  protected $model;
+  //protected $model;
 
   //Contrutor da classe
-  public function ___construct(Loan $loan)
-  {
-    $this->model = $loan;
-  }
+ // public function ___construct(Loan $loan)
+  //{
+   // $this->model = $loan;
+//  }
 
   //Controle da pagina inicial
   public function index(Request $request)
   {
-    $loans = Loan::all();    
+    $loans = Loan::all();
 
     return view('loans.index', compact('loans'));
   }
 
   public function create()
   {
-
-    //recupera materiais cadastrados 
+    //recupera materiais cadastrados
     $materials = Material::orderby('name', 'asc')->get();
 
     //recuperar clientes cadastros
@@ -41,31 +40,35 @@ class LoanController extends Controller
     return view('loans.create', compact('materials', 'customers'));
   }
 
-  // Função responsavel por salvar emrpestimo
+  // Função responsavel por salvar emprestimo
   public function store(Request $request)
   {
-    $loan = new Loan;
+    $loan = new Loan();
     $loan->material_id = $request->material;
     $loan->customer_id = $request->customer;
     $loan->save();
 
-    return view('loans.index', compact('loans'));
+    return view('loans.index', compact('loan'));
   }
 
   public function edit($id)
   {
     if (!$loan= Loan::find($id))
              return redirect() -> route('loans.index');
-  
+
           return view('loans.edit', compact('loan'));
 
   }
 
-  //Registrar emprestimos
+  // Não finalizado este parte
+  public function loansMaterials()
+  {
 
-  //Mostrar itens emprestados
+    //recuperar clientes cadastros
+    $customers = Customer::orderby('username', 'asc')->get();
 
+    return view('loans.create', compact('materials', 'customers'));
+  }
 
-  //registrar devolução 
 
 }

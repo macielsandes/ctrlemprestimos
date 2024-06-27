@@ -10,12 +10,14 @@ class Loan extends Model
     use HasFactory;
 
     protected $fillable = [
-        'loandate', 'material_id', 'customer_id',
+        'loandate',
+        'material_id',
+        'customer_id',
     ];
 
     /**
      * The materials that belong to the Customers.
-     * 
+     *
      */
 
     public function material()

@@ -18,17 +18,22 @@ class Material extends Model
     {
        $materials = $this->where(function ($query) use ($search){
             if ($search){
-                $query->where('name', $search);                
+                $query->where('name', $search);
             }
-        })->get();    
+        })->get();
 
         return $materials;
-    }  
-    
+    }
+
+    public function estaDisponivel(): bool
+    {
+        return $this->emprestimos()->whereNull('data_devolucao')->count() === 0;
+    }
+
     public function loanCustomer()
     {
         return $this->belongsToMany(Customer::class);
-    }   
-   
-   
+    }
+
+
 }

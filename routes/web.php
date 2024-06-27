@@ -3,7 +3,7 @@
 use App\Http\Controllers\{
     MaterialController,
     UserController,
-    CustomerController,   
+    CustomerController,
     DashboardController,
     DevolutionController,
     LoanController,
@@ -49,12 +49,13 @@ Route::get('/customer/{id}', [CustomerController::class, 'show'])-> name('custom
 
 Route::put('/loan/{id}',[LoanController::class, 'update']) -> name('loans.update');
 Route::get('/loan', [LoanController::class, 'index']) -> name('loans.index');
-Route::get('/loan/create', [LoanController::class, 'create']) -> name('loans.create'); 
+Route::get('/loan/create', [LoanController::class, 'create']) -> name('loans.create');
 Route::post('/loan', [LoanController::class, 'store']) -> name('loans.store');
 Route::get('/loan/{id}', [LoanController::class, 'edit']) -> name('loans.edit');
 
 Route::get('/devolution', [DevolutionController::class, 'index']) -> name('devolutions.index');
 Route::get('/devolution/create', [DevolutionController::class, 'create']) -> name('devolutions.index');
+Route::get('/devolution/retorn', [DevolutionController::class, 'devolutionReturn']) -> name('devolutions.return');
 
 Route::get('/dashboard', [DashboardController::class, 'index'])-> name('dashboards.index');
 

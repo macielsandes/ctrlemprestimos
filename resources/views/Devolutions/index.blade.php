@@ -8,10 +8,10 @@
     </div>
 
     <div class="container-fluid mt-3">
-        <div class="row py-2">           
+        <div class="row py-2">
             <!--Botao de devolucao -->
             <div class="col-md-6">
-                <a class="btn btn-primary" href="" role="button">Registrar Devolução </a>
+                <a class="btn btn-primary" href="{{ route('devolutions.return') }}" role="button">Registrar Devolução </a>
             </div>
         </div>
 
@@ -24,7 +24,7 @@
             </form>
         </div>
     </div>
-    
+
     <!--Inicio da Tabela-->
     <div class=" container-fluid table-responsive">
         <table class="table table-bordered">
@@ -32,10 +32,10 @@
                 <tr>
                     <th scope="col">ID</th>
                     <th scope="col">Material</th>
-                    <th scope="col">Usuário</th> 
-                    <th scope="col">Data do empréstimo</th> 
-                    <th scope="col">Hora do emrpréstimo</th>                         
-                    <th scope="col">status</th>                   
+                    <th scope="col">Usuário</th>
+                    <th scope="col">Data do empréstimo</th>
+                    <th scope="col">Hora do emrpréstimo</th>
+                    <th scope="col">status</th>
                 </tr>
             </thead>
             @foreach ($loans as $loan)
@@ -44,17 +44,17 @@
                     <td> {{ $loan->material->name }} </td>
                     <td> {{ $loan->customer->username}} </td>
                     <td> {{ date ('d/m/Y', strtotime ($loan->loandate))}} </td>
-                    <td> {{ date ('H:i', strtotime ($loan->loandate))}} </td>                       
-                    <td> <a class="btn btn-primary" href="" 
-                        role="button">Registrar Devolução </a>                
-                    </td>     
+                    <td> {{ date ('H:i', strtotime ($loan->loandate))}} </td>
+                    <td> <a class="btn btn-primary" href=""
+                        role="button">Registrar Devolução </a>
+                    </td>
 
                 </tr>
             @endforeach
         </table>
     </div>
-    
-       
+
+
 
     <div class="container mt-6">
         <ul class="pagination  justify-content-center">
