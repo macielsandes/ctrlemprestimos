@@ -12,9 +12,9 @@
     </div>
     <div class="row p-3 d-flex bd-highlight">
         <!--Botao de emprestimo -->
-        <div class="col-6">
-            <a class="btn btn-primary" href="{{ route('loans.create') }}" role="button">Novo Empréstimo</a>
-        </div>
+        <!--<div class="col-6">
+            <a class="btn btn-primary" href="" role="button">Novo Empréstimo</a>
+        </div> Botao de emprestimo -->
         <!--Div da barra de pesquisa-->
         <div class="col-6">
             <form class="d-flex ms-auto p-2 bd-highlight" action="" method="get">
@@ -46,7 +46,7 @@
                                 class="rounded mx-auto d-block" style="max-height:30px; max-width:30px" alt="" srcset="">
                         </td>
                         <td>
-                            <a class="btn btn-primary" href="{{ route('loans.edit', $loan->id) }}" role="button">Emprestar Material</a>
+                            <a class="btn btn-primary" href="" role="button">Emprestar Material</a>
                         </td>
                     </tr>
                 @endforeach

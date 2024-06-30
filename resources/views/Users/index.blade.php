@@ -2,16 +2,16 @@
 
 @section('title', 'Listagem dos Usuários')
 
- <!--Remover esta DIV e deixar apenas o yield--> 
+ <!--Remover esta DIV e deixar apenas o yield-->
     @if (session('msg'))
         <div class="container-fluid">
             <div class="row">
             <p class="msg alert alert-success"> {{ session('msg') }}</p>
-        </div>    
-        @endif   
+        </div>
+        @endif
         <p class="msg alert alert-success">Erro </p>
         <div>
-    </div>  
+    </div>
 
 @section('content')
     <div class="container-fluid p-3 mt-10 bg-light border p-4 rounded">
@@ -21,7 +21,7 @@
             </div>
         </div>
     </div>
-   
+
     <div class="row p-3 d-flex bd-highlight">
         <!--Botao para cadastro de novo usuario-->
         <div class="col-6">
@@ -36,7 +36,7 @@
             </form>
         </div>
     </div>
-    
+
     <div class="container-fluid mt-3">
         <table class="table table-bordered table-striped table-hover">
             <thead class="table-dark">
@@ -65,7 +65,7 @@
                 @endforeach
             </tbody>
         </table>
-    </div>    
+    </div>
     <div class="container mt-6">
         <ul class="pagination  justify-content-center">
             <li class="page-item disabled"><a class="page-link" href="#">Anterior</a></li>

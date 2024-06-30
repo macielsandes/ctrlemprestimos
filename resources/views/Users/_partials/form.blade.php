@@ -4,8 +4,8 @@
     <div class="row">
         <div class="col">
             <label for="firstname" class="form-label">Nome:</label>
-            <input class="form-control" type="text" name="firstname" id="firstname"
-                value="{{ $user->firstname ?? old('firstname') }}">
+                <input class="form-control" type="text" name="firstname" id="firstname"
+                    value="{{ $user->firstname ?? old('firstname') }}">
         </div>
         <div class="col">
             <label for="lastname'" class="form-label">Sobrenome:</label>
@@ -37,7 +37,7 @@
             <div class="col">
             <label for="password" class="form-label">Repeta senha:</label>
             <input class="form-control" type="password" name="password" id="password">
-            </div> 
+            </div>
         </div>
     </div>
     <div class="row mt-3">
