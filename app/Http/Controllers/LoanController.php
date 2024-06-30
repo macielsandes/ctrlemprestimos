@@ -25,12 +25,12 @@ class LoanController extends Controller
   public function create()
   {
    //recupera materiais cadastrados
-   $materials = Material::orderby('name', 'asc')->get();
+   $material = Material::orderby('name', 'asc')->get();
 
     //recuperar clientes cadastros
-   $customers = Customer::orderby('username', 'asc')->get();
+   $customer = Customer::orderby('username', 'asc')->get();
 
-    return view('loans.create', compact('materials', 'customers'));
+    return view('loans.create', compact('material', 'customer'));
   }
 
   // Função responsavel por salvar emrpestimo
@@ -51,13 +51,11 @@ class LoanController extends Controller
 
   public function edit($id)
   {
-    //$materials = new Material();
-    $materials = Material::all();
 
-    if (!$materials = Material::find($id))
+    if (!$loan = Loan::find($id))
       return redirect()->route('loans.index');
 
-    return view('loans.edit', compact('materials'));
+    return view('loans.edit', compact('loan'));
   }
 
   //function quantydeMaterial()

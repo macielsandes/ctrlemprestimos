@@ -49,7 +49,7 @@ Route::post('/customer', [CustomerController::class, 'store']) -> name('customer
 Route::get('/customer/{id}', [CustomerController::class, 'show'])-> name('customers.show');
 
 Route::put('/loan/{id}',[LoanController::class, 'update']) -> name('loans.update');
-Route::get('/loan/{id}/', [LoanController::class, 'edit']) -> name('loans.edit');
+//Route::get('/loan/{id}/', [LoanController::class, 'edit']) -> name('loans.edit'); Corrigir
 Route::get('/loan', [LoanController::class, 'index']) -> name('loans.index');
 Route::get('/loan/create', [LoanController::class, 'create']) -> name('loans.create');
 Route::post('/loan', [LoanController::class, 'store']) -> name('loans.store');
