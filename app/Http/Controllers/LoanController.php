@@ -14,15 +14,31 @@ use App\Models\Customer;
 class LoanController extends Controller
 {
 
-   //Controle da pagina incial de emprestimo
-  public function index(Request $request)
-  {
-    //instancia a classe loans
-    $loans = Loan::all();
-    return view('loans.index', compact('loans'));
-  }
+    //Registra emprestimo de materiais
+    public function loanRegister()
+    {
+        //recupera materiais cadastrados
+        $material = Material::orderby('name', 'asc')->get();
 
-  public function create()
+        //recuperar clientes cadastros
+        $customer = Customer::orderby('username', 'asc')->get();
+
+        return view('loans.register', compact('material', 'customer'));
+    }
+
+    //Registra emprestimo de materiais
+    public function loanDevolution()
+    {
+        //recupera materiais cadastrados
+        $material = Material::orderby('name', 'asc')->get();
+
+        //recuperar clientes cadastros
+        $customer = Customer::orderby('username', 'asc')->get();
+
+        return view('loans.devolution', compact('material', 'customer'));
+    }
+
+    /* public function create()
   {
    //recupera materiais cadastrados
    $material = Material::orderby('name', 'asc')->get();
@@ -58,5 +74,5 @@ class LoanController extends Controller
     return view('loans.edit', compact('loan'));
   }
 
-  //function quantydeMaterial()
+  //function quantydeMaterial()*/
 }
