@@ -49,6 +49,8 @@ Route::post('/customer', [CustomerController::class, 'store']) -> name('customer
 Route::get('/customer/{id}', [CustomerController::class, 'show'])-> name('customers.show');
 
 Route::get('/loan', [LoanController::class, 'loanRegister']) -> name('loans.register');
+Route::post('/loan', [LoanController::class, 'store']) -> name('loans.store');
+
 Route::get('/devolution', [LoanController::class, 'loanDevolution']) -> name('loans.devolution');
 //Novas classe loan
 

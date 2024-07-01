@@ -14,28 +14,28 @@ use App\Models\Customer;
 class LoanController extends Controller
 {
 
-    //Registra emprestimo de materiais
+    //Envio usuario para a tela de emprestimo
     public function loanRegister()
     {
         //recupera materiais cadastrados
-        $material = Material::orderby('name', 'asc')->get();
+        $materials = Material::orderby('name', 'asc')->get();
 
         //recuperar clientes cadastros
-        $customer = Customer::orderby('username', 'asc')->get();
+        $customers = Customer::orderby('username', 'asc')->get();
 
-        return view('loans.register', compact('material', 'customer'));
+        return view('loans.register', compact('materials', 'customers'));
     }
 
     //Registra emprestimo de materiais
     public function loanDevolution()
     {
         //recupera materiais cadastrados
-        $material = Material::orderby('name', 'asc')->get();
+        $materials = Material::orderby('name', 'asc')->get();
 
         //recuperar clientes cadastros
-        $customer = Customer::orderby('username', 'asc')->get();
+        $customers = Customer::orderby('username', 'asc')->get();
 
-        return view('loans.devolution', compact('material', 'customer'));
+        return view('loans.devolution', compact('materials', 'customers'));
     }
 
     /* public function create()
@@ -47,25 +47,23 @@ class LoanController extends Controller
    $customer = Customer::orderby('username', 'asc')->get();
 
     return view('loans.create', compact('material', 'customer'));
-  }
+  }*/
 
-  // Função responsavel por salvar emrpestimo
+  //registra emprestimo no banco e dedos
   public function store(Request $request)
   {
-    $loans = new Loan;
-    $materials = Material::all();
-
+    $loans = new Loan();
     $loans ->material_id = $request->material;
     $loans ->customer_id = $request->customer;
     $loans ->save();
 
     //return view('loans.index', compact('loans'));
 
-    return view('loans.index', compact('materials'));
+    return view('loans.register');
 
   }
 
-  public function edit($id)
+  /*public function edit($id)
   {
 
     if (!$loan = Loan::find($id))
