@@ -39,8 +39,19 @@
                     <th scope="col">status</th>
                 </tr>
             </thead>
-        </table>
-    </div>
+            @foreach ($loans as $loan)
+            <tr>
+                <td> {{ $loan->id }} </td>
+                <td> {{ $loan->material->name }} </td>
+                <td> {{ $loan->customer->username}} </td>
+                <td> {{ date ('d/m/Y', strtotime ($loan->loandate))}} </td>
+                <td> {{ date ('H:i', strtotime ($loan->loandate))}} </td>
+                <td> <a class="btn btn-primary" href=""
+                    role="button">Registrar Devolução </a>
+                </td>
+            </tr>
+        @endforeach
+        </table>    </div>
 
 
 
