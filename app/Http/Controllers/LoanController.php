@@ -46,7 +46,7 @@ class LoanController extends Controller
     $loan = new Loan();
     $loan->material_id = $request->material;
     $loan->customer_id = $request->customer;
-    $loan->save();
+    $loan ->save();
 
     return view('loans.index', compact('loan'));
   }
