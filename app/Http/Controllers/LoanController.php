@@ -14,6 +14,11 @@ use App\Models\Customer;
 class LoanController extends Controller
 {
 
+    public function index (){
+        $loans = Loan::all();
+        return view('loans.index', compact('loans'));
+    }
+
     //Envio usuario para a tela de emprestimo
     public function loanRegister()
     {
@@ -59,7 +64,7 @@ class LoanController extends Controller
 
     //return view('loans.index', compact('loans'));
 
-    return view('loans.register');
+    return view('loans.register', compact('loans'));
 
   }
 

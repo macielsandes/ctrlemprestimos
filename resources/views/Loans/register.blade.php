@@ -24,7 +24,7 @@
                     <select name='material' id='material' class="form-select">
                         <option>Selecione</option>
                         @forelse ($materials as $material)
-                            <option value="{{ $material->id }}"> {{ $material->name }} </option>
+                            <option value="{{ $material->id }}" {{ old ('material') == $material->id ? 'selected' : ''}}> {{$material->name}} </option>
                         @empty
                             <option value="">Nenhum material cadastrado!</option>
                         @endforelse
@@ -37,7 +37,7 @@
                         <select name='customer' id='customer' class="form-select">
                             <option>Selecione</option>
                             @forelse ($customers as $customer)
-                                <option value="{{ $customer->id }}"> {{ $customer->username }} </option>
+                                <option value="{{ $customer->id }}" {{ old('customer') == $customer->id ? 'selected' : '' }}> {{ $customer->username }} </option>
                             @empty
                                 <option value="">Nenhum cliente cadastrado! </option>
                             @endforelse
