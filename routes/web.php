@@ -48,15 +48,10 @@ Route::get('/customer/create', [CustomerController::class, 'create']) -> name('c
 Route::post('/customer', [CustomerController::class, 'store']) -> name('customers.store');
 Route::get('/customer/{id}', [CustomerController::class, 'show'])-> name('customers.show');
 
-Route::get('/loan', [LoanController::class, 'loanRegister']) -> name('loans.register');
 Route::get('/loan', [LoanController::class, 'index'])-> name('loans.index');
+Route::get('/loan/register', [LoanController::class, 'register']) -> name('loans.register');
 Route::post('/loan', [LoanController::class, 'store']) -> name('loans.store');
-
-Route::get('/devolution', [LoanController::class, 'loanDevolution']) -> name('loans.devolution');
-//Novas classe loan
-
-
-Route::get('/dashboard', [DashboardController::class, 'index'])-> name('dashboards.index');
+Route::get('/loan/devolution', [LoanController::class, 'devolution']) -> name('loans.devolution');
 
 Route::get('/', function () {
     return view('welcome');

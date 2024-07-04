@@ -13,14 +13,20 @@ use App\Models\Customer;
  */
 class LoanController extends Controller
 {
+    public function index()
+    {
+        //recupera materiais cadastrados
+        $materials = Material::orderby('name', 'asc')->get();
 
-    public function index (){
+        //recuperar clientes cadastros
+        $customers = Customer::orderby('username', 'asc')->get();
+
         $loans = Loan::all();
         return view('loans.index', compact('loans'));
     }
 
-    //Envio usuario para a tela de emprestimo
-    public function loanRegister()
+    //função que envia o usuario para seleção de material
+    public function register()
     {
         //recupera materiais cadastrados
         $materials = Material::orderby('name', 'asc')->get();
@@ -32,7 +38,7 @@ class LoanController extends Controller
     }
 
     //Registra emprestimo de materiais
-    public function loanDevolution()
+    public function devolution()
     {
         //recupera materiais cadastrados
         $materials = Material::orderby('name', 'asc')->get();
@@ -57,14 +63,18 @@ class LoanController extends Controller
   //registra emprestimo no banco e dedos
   public function store(Request $request)
   {
+
     $loans = new Loan();
+
+    $loans->fill($request->all());
+
     $loans ->material_id = $request->material;
     $loans ->customer_id = $request->customer;
     $loans ->save();
 
     //return view('loans.index', compact('loans'));
 
-    return view('loans.register', compact('loans'));
+    return view('loans.register');
 
   }
 

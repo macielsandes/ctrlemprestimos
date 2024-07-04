@@ -48,13 +48,13 @@
                             <a class="nav-link" href="/material">Materiais</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/loan">Empréstimo de Material</a>
+                            <a class="nav-link" href="/loan/register">Empréstimo de Material</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/devolution">Devolução de Material</a>
+                            <a class="nav-link" href="/loan/devolution">Devolução de Material</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href=" ">Materiais emprestados</a>
+                            <a class="nav-link" href="/loan">Materiais emprestados</a>
                         </li>
                     </ul>
                 </div>
