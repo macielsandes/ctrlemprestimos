@@ -15,12 +15,6 @@ class LoanController extends Controller
 {
     public function index()
     {
-        //recupera materiais cadastrados
-        $materials = Material::orderby('name', 'asc')->get();
-
-        //recuperar clientes cadastros
-        $customers = Customer::orderby('username', 'asc')->get();
-
         $loans = Loan::all();
         return view('loans.index', compact('loans'));
     }

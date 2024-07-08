@@ -53,6 +53,8 @@ Route::get('/loan/register', [LoanController::class, 'register']) -> name('loans
 Route::post('/loan', [LoanController::class, 'store']) -> name('loans.store');
 Route::get('/loan/devolution', [LoanController::class, 'devolution']) -> name('loans.devolution');
 
+Route::get('/dashboard', [DashboardController::class, 'index'])-> name('dashboards.index');
+
 Route::get('/', function () {
     return view('welcome');
 });
