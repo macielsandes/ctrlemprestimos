@@ -1,4 +1,4 @@
-@extends('Layouts.default')
+@extends('admin.layouts.default')
 
 @section('title', 'Clientes')
 
@@ -9,7 +9,7 @@
         </div>
     </div>
 
-    <div class="row p-3 d-flex bd-highlight">   
+    <div class="row p-3 d-flex bd-highlight">
         <!--Botao para cadastro de novo cliente-->
         <div class="col">
             <a class="btn btn-primary" href="{{ route('customers.create') }}" role="button">Novo cliente</a>
@@ -24,9 +24,9 @@
             </form>
         </div>
     </div>
-        
+
     <div class="table-responsive">
-        <table class="table table-bordered table-striped table-hover">        
+        <table class="table table-bordered table-striped table-hover">
             <thead class="table-dark table-striped">
                 <tr>
                     <th scope="col">ID</th>

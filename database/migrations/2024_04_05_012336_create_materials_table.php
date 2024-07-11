@@ -11,24 +11,27 @@ return new class extends Migration
      */
     public function up(): void
     {
+        //Criando a tabela materiais
         Schema::create('materials', function (Blueprint $table) {
             $table->id();
-            $table->string('name')-> unique();   
-            $table->text('description');            
-            $table->string('image')-> nullable(); 
-            $table-> boolean('status')->default(true);                   
+            $table->string('name')-> unique();
+            $table->text('description');
+            $table->string('image')-> nullable();
+            $table-> boolean('status')->default(true);
             $table->timestamps();
         });
 
+        //Criando a tabela loan(Emprestimos)
         Schema::create('loans', function (Blueprint $table) {
-            $table->id();  
-            $table->timestamp('loandate');              
-            $table->unsignedBigInteger('material_id');           
-            $table->foreign('material_id')->references('id')->on('materials')->onDelete('cascade');  
-
+            $table->id();
+            $table->timestamp('loandate');
+            $table->unsignedBigInteger('material_id');
             $table->unsignedBigInteger('customer_id');
-            $table->foreign('customer_id')->references('id')->on('customers')->onDelete('cascade');        
-            $table->timestamps();                     
+            $table->timestamps();
+
+            $table->foreign('material_id')->references('id')->on('materials')->onDelete('cascade');
+            $table->foreign('customer_id')->references('id')->on('customers')->onDelete('cascade');
+
         });
 
     }

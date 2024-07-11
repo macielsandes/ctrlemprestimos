@@ -1,4 +1,4 @@
-@extends('Layouts.default')
+@extends('admin.layouts.default')
 
 @section('title', ' Cadastrar Material')
 

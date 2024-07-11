@@ -13,9 +13,16 @@ return new class extends Migration
     {
         Schema::create('users_roles', function (Blueprint $table) {
             $table->id();
-            $table->string('type')-> unique();  
-            $table->foreignId('user_id')->constrained('users');     
+            $table->unsignedBigInteger('user_id');
+            $table->string('type')-> unique();
             $table->timestamps();
+
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+
         });
     }
 

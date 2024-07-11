@@ -1,8 +1,9 @@
 @csrf
 <!--Forms de Emprestimo de material-->
+
 <div class="container-fluid">
     <div class="row">
-        <div class="col">
+        <div class="col mt-3">
             <label for="material" class="form-label">Selecione o material:</label>
             <select name='material' id='material' class="form-select">
                 <option>Selecione</option>
@@ -14,7 +15,7 @@
                 </option>
             </select>
         </div>
-        <div class="row">
+        <div class="row mt-3">
             <div class="col">
                 <label for="customer" class="form-label">Selecione o usuário:</label>
                 <select name='customer' id='customer' class="form-select">
@@ -27,7 +28,7 @@
                 </select>
             </div>
         </div>
-            <div class="row">
+            <div class="row mt-3">
                 <div class="col">
                     <button type="submit" class="btn btn-secondary">Salvar</button>
                 </div>

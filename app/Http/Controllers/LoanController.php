@@ -13,13 +13,22 @@ use App\Models\Customer;
  */
 class LoanController extends Controller
 {
-    public function index()
+    protected $model;
+
+    //Contrutor da classe
+    public function ___construct(Loan $loan)
     {
-        $loans = Loan::all();
-        return view('loans.index', compact('loans'));
+        $this->model = $loan;
     }
 
-    //função que envia o usuario para seleção de material
+    //Controle da pagina inicial
+    public function index(Request $request)
+    {
+        $loans = Loan::all();
+        return view('admin.loans.index', compact('loans'));
+    }
+
+    //registra emprestimo de material
     public function register()
     {
         //recupera materiais cadastrados
@@ -28,16 +37,16 @@ class LoanController extends Controller
         //recuperar clientes cadastros
         $customers = Customer::orderby('username', 'asc')->get();
 
-        return view('loans.register', compact('materials', 'customers'));
+        return view('admin.loans.register', compact('materials', 'customers'));
     }
 
-    //Registra emprestimo de materiais
+    //registra devolução de material
     public function devolution()
     {
         //recupera materiais cadastrados
         $loans = Loan::all();
 
-        return view('loans.devolution', compact('loans'));
+        return view('admin.loans.devolution', compact('loans'));
     }
 
     /* public function create()
@@ -61,7 +70,7 @@ class LoanController extends Controller
 
     //return view('loans.index', compact('loans'));
 
-    return view('loans.register', compact('loan'));
+    return view('admin.loans.register', compact('loan'));
   }
 }
 

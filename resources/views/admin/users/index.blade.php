@@ -1,6 +1,6 @@
-@extends('Layouts.default')
+@extends('admin.layouts.default')
 
-@section('title', 'Listagem dos Usuários')
+@section('title', 'Usuários')
 
  <!--Remover esta DIV e deixar apenas o yield-->
     @if (session('msg'))

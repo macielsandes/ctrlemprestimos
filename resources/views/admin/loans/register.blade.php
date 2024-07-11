@@ -1,4 +1,4 @@
-@extends('Layouts.default')
+@extends('admin.layouts.default')
 
 @section('title', 'Empréstimo')
 
@@ -16,7 +16,7 @@
 </div class="card-body">
     <form action="{{ route('loans.store') }}" method="post">
         @csrf
-        @include('loans._partials.form')
+        @include('admin.loans._partials.form')
     </form>
 </div>
 @endsection

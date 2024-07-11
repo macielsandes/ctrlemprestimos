@@ -1,4 +1,4 @@
-@extends('Layouts.default')
+@extends('admin.layouts.default')
 
 @section('title', 'Editar usuário')
 
@@ -8,6 +8,6 @@
     </div>
     <form action="{{ route('users.update', $user->id) }}" method="post">
         @method('PUT')
-        @include('users._partials.form')
+        @include('admin.users._partials.form')
     </form>
 @endsection

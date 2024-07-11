@@ -1,6 +1,6 @@
-@extends('Layouts.default')
+@extends('admin.layouts.default')
 
-@section('title', 'Empréstimos')
+@section('title', 'Materiais Emprestados')
 
 @section('content')
     <div class="container border p-3 mt-10">
@@ -10,11 +10,11 @@
     </div>
 
     <div class="container-fluid mt-3">
-        <div class="row">           
+        <div class="row">
             <!--Botao de devolucao -->
             <div class="col">
-                <a class="btn btn-primary" href="{{ route('devolutions.create') }}" role="button">Registrar Devolução </a>
-            </div>       
+                <a class="btn btn-primary" href="" role="button">Registrar Devolução </a>
+            </div>
 
         <!--Div da barra de pesquisa-->
         <div class="col">
@@ -25,7 +25,7 @@
             </form>
         </div>
     </div>
-    
+
     <!--Inicio da Tabela-->
     <div class=" container-fluid table-responsive">
         <table class="table table-bordered">
@@ -33,28 +33,27 @@
                 <tr>
                     <th scope="col">Id</th>
                     <th scope="col">Material</th>
-                    <th scope="col">Usuário</th> 
-                    <th scope="col">Data do empréstimo</th> 
-                    <th scope="col">Hora do empréstimo</th>                         
-                    <th scope="col">status</th>                   
+                    <th scope="col">Usuário</th>
+                    <th scope="col">Data do empréstimo</th>
+                    <th scope="col">Hora do empréstimo</th>
+                    <th scope="col">status</th>
                 </tr>
             </thead>
             @foreach ($loans as $loan)
-                <tr>
-                    <td> {{ $loan->id }} </td>
-                    <td> {{ $loan->material->name }} </td>
-                    <td> {{ $loan->customer->username}} </td>
-                    <td> {{ date ('d/m/Y', strtotime ($loan->loandate))}} </td>
-                    <td> {{ date ('H:i', strtotime ($loan->loandate))}} </td>                       
-                    <td> <a class="btn btn-primary" href="{{ route('devolutions.edit', $loan->id) }}" 
-                        role="button">Registrar Devolução </a>                
-                    </td> 
-                </tr>
-            @endforeach
-        </table>
-    </div>
-    
-       
+            <tr>
+                <td> {{ $loan->id }} </td>
+                <td> {{ $loan->material->name }} </td>
+                <td> {{ $loan->customer->username}} </td>
+                <td> {{ date ('d/m/Y', strtotime ($loan->loandate))}} </td>
+                <td> {{ date ('H:i', strtotime ($loan->loandate))}} </td>
+                <td> <a class="btn btn-primary" href=""
+                    role="button">Registrar Devolução </a>
+                </td>
+            </tr>
+        @endforeach
+        </table>    </div>
+
+
 
     <div class="container mt-6">
         <ul class="pagination  justify-content-center">

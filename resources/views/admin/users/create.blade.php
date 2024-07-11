@@ -1,4 +1,4 @@
-@extends('Layouts.default')
+@extends('admin.layouts.default')
 
 @section('title', 'Cadastrar novo usuário')
 
@@ -9,9 +9,9 @@
                 <h1>Cadastro de novo usuário</h1>
             </div>
         </div>
-    </div>    
+    </div>
     <form action="{{ route('users.store') }}" method="post">
         @csrf
-        @include('users._partials.form')
+        @include('admin.users._partials.form')
     </form>
 @endsection
