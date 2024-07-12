@@ -31,6 +31,7 @@ Route::prefix('/admin')-> group(function(){
     Route::post('/users', [UserController::class, 'store']) -> name('users.store');
     Route::get('/users/{id}', [UserController::class, 'show'])-> name('users.show');
 
+    Route::get('/material/loanlist', [MaterialController::class, 'loanCustomer'])-> name('material.loans');
     Route::delete('/material{id}',[MaterialController::class, 'destroy']) -> name('materials.destroy');
     Route::put('/material/{id}',[MaterialController::class, 'update']) -> name('materials.update');
     Route::get('/material/{id}/edit', [MaterialController::class, 'edit'])-> name('materials.edit');
@@ -38,6 +39,7 @@ Route::prefix('/admin')-> group(function(){
     Route::get('/material/create', [MaterialController::class, 'create'])-> name('materials.create');
     Route::post('/material', [MaterialController::class, 'store'])-> name('materials.store');
     Route::get('/material/{id}', [MaterialController::class, 'show'])-> name('materials.show');
+
 
     Route::delete('/customer/{id}',[CustomerController::class, 'destroy']) -> name('customers.destroy');
     Route::put('/customer/{id}',[CustomerController::class, 'update']) -> name('customers.update');
@@ -47,10 +49,11 @@ Route::prefix('/admin')-> group(function(){
     Route::post('/customer', [CustomerController::class, 'store']) -> name('customers.store');
     Route::get('/customer/{id}', [CustomerController::class, 'show'])-> name('customers.show');
 
-    Route::get('/loan', [LoanController::class, 'index'])-> name('loans.index');
-    Route::get('/loan/register', [LoanController::class, 'register']) -> name('loans.register');
-    Route::post('/loan', [LoanController::class, 'store']) -> name('loans.store');
-    Route::get('/loan/devolution', [LoanController::class, 'devolution']) -> name('loans.devolution');
+
+    //Route::get('/loan', [LoanController::class, 'index'])-> name('loans.index');
+    //Route::get('/loan/register/', [LoanController::class, 'register']) -> name('loans.register');
+    //Route::post('/loan/{id}/{id}', [LoanController::class, 'store']) -> name('loans.store');
+    //Route::get('/loan/devolution', [LoanController::class, 'devolution']) -> name('loans.devolution');
 
     Route::get('/dashboard', [DashboardController::class, 'index'])-> name('dashboards.index');
 });

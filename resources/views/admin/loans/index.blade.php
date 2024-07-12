@@ -39,13 +39,13 @@
                     <th scope="col">status</th>
                 </tr>
             </thead>
-            @foreach ($loans as $loan)
+            @foreach ($materials as $material)
             <tr>
-                <td> {{ $loan->id }} </td>
-                <td> {{ $loan->material->name }} </td>
-                <td> {{ $loan->customer->username}} </td>
-                <td> {{ date ('d/m/Y', strtotime ($loan->loandate))}} </td>
-                <td> {{ date ('H:i', strtotime ($loan->loandate))}} </td>
+                <td> {{ $material->id }} </td>
+                <td> {{ $material->material->name }} </td>
+                <td> {{ $material->customer->username}} </td>
+                <td> {{ date ('d/m/Y', strtotime ($material->loandate))}} </td>
+                <td> {{ date ('H:i', strtotime ($material->loandate))}} </td>
                 <td> <a class="btn btn-primary" href=""
                     role="button">Registrar Devolução </a>
                 </td>

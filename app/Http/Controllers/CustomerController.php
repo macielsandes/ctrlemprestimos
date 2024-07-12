@@ -13,41 +13,41 @@ class CustomerController extends Controller
     public function __construct(Customer $customer)
     {
         $this->model = $customer;
-    }    
-    
+    }
+
     public function index(Request $request)
-    {      
+    {
         $customers = $this->model
             ->getCustomers(
             search: $request ->search ?? ''
         );
-        
-        return view ('customers.index', compact ('customers'));       
+
+        return view ('admin.customers.index', compact ('customers'));
     }
 
     //controle para mostrar usuario
     public function show($id)
-    {       
+    {
         if(!$customer= Customer::find($id))
-           return redirect() -> route('customers.index');
+           return redirect() -> route('admin.customers.index');
 
         //se for passado um ID de um material valido, direciona para a tela de edição de usuario
-        return view('customers.show', compact('customer'));
+        return view('admin.customers.show', compact('customer'));
     }
-    
+
     //
     public function create()
     {
-       return view('customers.create'); 
+       return view('admin.customers.create');
     }
-    
+
     //Recebendo dados do formulario
     public function store(Request $request)
-    {                   
-        $customer = new Customer();        
-        
+    {
+        $customer = new Customer();
+
         $customer->create($request->all());
-        
+
         return redirect()-> route ('customers.index');
     }
 
@@ -57,17 +57,17 @@ class CustomerController extends Controller
         if (!$customer= Customer::find($id))
            return redirect() -> route('customers.index');
 
-        return view('customers.edit', compact('customer'));
+        return view('admin.customers.edit', compact('customer'));
     }
-    
+
     //Excluir usuario do dando de dados
     public function destroy($id)
     {
         if(!$user= Customer::find($id))
-           return redirect() -> route('customers.index');
-        
+           return redirect() -> route('admin.customers.index');
+
         $user->delete();
 
-        return redirect() -> route('customers.index');
+        return redirect() -> route('admin.customers.index');
     }
 }

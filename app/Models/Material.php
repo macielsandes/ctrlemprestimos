@@ -20,19 +20,19 @@ class Material extends Model
     {
        $materials = $this->where(function ($query) use ($search){
             if ($search){
-                $query->where('name', $search);                
+                $query->where('name', $search);
             }
-        })->get();    
+        })->get();
 
         return $materials;
-    }  
-    
+    }
+
     // Relaciona o modelo para emprestar para um cliente
-    public function loanCustomer()
+    public function Customers()
     {
-        return $this->belongsToMany(Customer::class);
-    }     
-    
-   
-   
+        return $this->belongsToMany(Material::class, 'material_id');
+    }
+
+
+
 }

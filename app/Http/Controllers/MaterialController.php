@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Customer;
 use App\Models\Material;
 use Illuminate\Http\Request;
 
@@ -24,7 +25,7 @@ class MaterialController extends Controller
    }
 
    // Pagina inicial e lista os dados cadastrados
-    public function index(Request $request)
+   public function index(Request $request)
     {
         $materials = $this->model
         ->getMaterials(
@@ -34,7 +35,7 @@ class MaterialController extends Controller
     }
 
      //controle para mostrar material
-     public function show($id)
+    /* public function show($id)
      {
          //opção 1 -> Permite buscar determinado ID de usuario
         //$user = User::where ('id',$id) ->first();
@@ -44,11 +45,11 @@ class MaterialController extends Controller
             return redirect() -> route('materials.index');*/
 
         //opção 3
-        $material = Material::find($id);
+       // $material = Material::find($id);
 
          //se for passado um ID de um material valido, direciona para a tela de edição de usuario
-         return view('admin.materials.show', compact('material'));
-     }
+      //   return view('admin.materials.show', compact('material'));
+   //  }
 
     //Função que direcionar a pagina de criação de usuario
     public function create()
@@ -66,7 +67,6 @@ class MaterialController extends Controller
 
         // segunda forma
         $material= new Material;
-
         $material->name = $request->name;
         $material->description = $request->description;
 
@@ -117,5 +117,14 @@ class MaterialController extends Controller
 
         return redirect()->route('admin.materials.index');
     }
+
+    public function loanCustomer(){
+        dd($customer = Customer::find(1));
+
+        //return view ('admin.loans.index', compact('customer'));
+
+    }
+
+
 
 }

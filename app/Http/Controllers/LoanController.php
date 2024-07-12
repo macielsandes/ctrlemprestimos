@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Loan;
 use App\Models\Material;
 use App\Models\Customer;
 
@@ -13,19 +12,17 @@ use App\Models\Customer;
  */
 class LoanController extends Controller
 {
-    protected $model;
-
-    //Contrutor da classe
-    public function ___construct(Loan $loan)
+     //Controle da pagina inicial
+    public function index()
     {
-        $this->model = $loan;
-    }
+        //$material = Material::with('customers')->find(1);
+        //dd($material->customers);
 
-    //Controle da pagina inicial
-    public function index(Request $request)
-    {
-        $loans = Loan::all();
-        return view('admin.loans.index', compact('loans'));
+        $customer = Customer::with('Materials')->find(1);
+        $customers->material;
+
+       // return view('admin.loans.index', compact('materials'));
+
     }
 
     //registra emprestimo de material
@@ -44,9 +41,15 @@ class LoanController extends Controller
     public function devolution()
     {
         //recupera materiais cadastrados
-        $loans = Loan::all();
+        //loan = new loan();
 
-        return view('admin.loans.devolution', compact('loans'));
+        //recupera materiais cadastrados
+        $materials = Material::orderby('name', 'asc')->get();
+
+        //recuperar clientes cadastros
+        $customers = Customer::orderby('username', 'asc')->get();
+
+        return view('admin.loans.devolution');
     }
 
     /* public function create()
@@ -61,16 +64,17 @@ class LoanController extends Controller
   }*/
 
   //registra emprestimo no banco e dedos
-  public function store(Request $request)
+  /*public function store(Request $request)
   {
-    $loan = new Loan();
-    $loan ->material_id = $request->material;
-    $loan ->customer_id = $request->customer;
+    $material->
+
+    $material->id
+
     $loan ->save();
 
     //return view('loans.index', compact('loans'));
 
-    return view('admin.loans.register', compact('loan'));
-  }
+    return view('admin.loans.register');
+  }*/
 }
 

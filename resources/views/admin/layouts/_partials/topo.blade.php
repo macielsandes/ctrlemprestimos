@@ -29,7 +29,7 @@
                         <a class="nav-link" href="{{ route('loans.devolution') }}">Devolução de Material</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('loans.index') }}">Materiais emprestados</a>
+                        <a class="nav-link" href="{{ route('loans.index') }}">Listar Empréstimos</a>
                     </li>
                 </ul>
             </div>

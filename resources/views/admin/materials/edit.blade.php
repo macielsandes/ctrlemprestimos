@@ -7,6 +7,6 @@
 <h2>Editar o Material</h2>
     <form action="{{ route('materials.update', $material->id) }}" method="post">
         @method('PUT')
-        @include('materials._partials.form')
+        @include('admin.materials._partials.form')
     </form>
 @endsection

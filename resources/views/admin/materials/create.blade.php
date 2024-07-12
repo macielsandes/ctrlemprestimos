@@ -8,7 +8,7 @@
         <h1>Cadastrar novo Material</h1>
         <form action="{{ route('materials.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
-            @include('materials._partials.form')
+            @include('admin.materials._partials.form')
         </form>
     </div>
 @endsection

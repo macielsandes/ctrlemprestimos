@@ -9,7 +9,7 @@
 </div class="card-body">
 <form action="{{ route('customers.store') }}" method="post">
     @csrf
-    @include('customers._partials.form')
+    @include('admin.customers._partials.form')
 </form>
 </div>
 

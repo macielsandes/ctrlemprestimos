@@ -8,6 +8,6 @@
 
 <form action="{{ route('customers.update', $customer->id)}}" method="post">
     @method('PUT')
-    @include('Customers._partials.form')
+    @include('admin.Customers._partials.form')
 </form>
 @endsection

@@ -9,7 +9,7 @@ class Customer extends Model
 {
     use HasFactory;
 
-    protected $fillable = [ 
+    protected $fillable = [
         'firstname', 'lastname','username','email',
     ];
 
@@ -21,18 +21,18 @@ class Customer extends Model
                 $query->where('username', $search);
                 $query->orwhere('firstname', 'LIKE', "%{$search}%");
             }
-        })->get();  
-        
+        })->get();
+
         return $customer;
     }
 
     /**
      * The roles that belong to the loanusers.
      */
-    public function loanMaterial()
+    public function Materials()
     {
-        return $this->belongsToMany(loan::class);
-    }   
+        return $this->belongsToMany(Customer::class, 'customer_id');
+    }
 
-    
+
 }
