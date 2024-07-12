@@ -22,7 +22,7 @@ return new class extends Migration
         });
 
         //Criando a tabela loan(Emprestimos)
-        Schema::create('customers_materials', function (Blueprint $table) {
+        Schema::create('materials_customers', function (Blueprint $table) {
             $table->id();
             $table->timestamp('loandate');
             $table->unsignedBigInteger('material_id');

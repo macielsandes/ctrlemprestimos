@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Material extends Model
 {
@@ -28,11 +29,9 @@ class Material extends Model
     }
 
     // Relaciona o modelo para emprestar para um cliente
-    public function Customers()
+    public function Customers(): BelongsToMany
     {
-        return $this->belongsToMany(Material::class, 'material_id');
+        return $this->belongsToMany(Customer::class);
     }
-
-
 
 }

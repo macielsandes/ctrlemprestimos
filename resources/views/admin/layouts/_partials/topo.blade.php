@@ -23,13 +23,13 @@
                         <a class="nav-link" href="{{ route('materials.index') }}">Materiais</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('loans.register') }}">Empréstimo de Material</a>
+                        <a class="nav-link" href="">Empréstimo de Material</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('loans.devolution') }}">Devolução de Material</a>
+                        <a class="nav-link" href="">Devolução de Material</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('loans.index') }}">Listar Empréstimos</a>
+                        <a class="nav-link" href="">Listar Empréstimos</a>
                     </li>
                 </ul>
             </div>

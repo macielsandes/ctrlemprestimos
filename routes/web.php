@@ -49,12 +49,6 @@ Route::prefix('/admin')-> group(function(){
     Route::post('/customer', [CustomerController::class, 'store']) -> name('customers.store');
     Route::get('/customer/{id}', [CustomerController::class, 'show'])-> name('customers.show');
 
-
-    //Route::get('/loan', [LoanController::class, 'index'])-> name('loans.index');
-    //Route::get('/loan/register/', [LoanController::class, 'register']) -> name('loans.register');
-    //Route::post('/loan/{id}/{id}', [LoanController::class, 'store']) -> name('loans.store');
-    //Route::get('/loan/devolution', [LoanController::class, 'devolution']) -> name('loans.devolution');
-
     Route::get('/dashboard', [DashboardController::class, 'index'])-> name('dashboards.index');
 });
 

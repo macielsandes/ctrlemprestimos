@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Customer extends Model
 {
@@ -13,7 +14,6 @@ class Customer extends Model
         'firstname', 'lastname','username','email',
     ];
 
-    // modelo da classe Customer
     public function getCustomers(string|null $search = null)
     {
        $customer = $this->where(function ($query) use ($search){
@@ -29,9 +29,9 @@ class Customer extends Model
     /**
      * The roles that belong to the loanusers.
      */
-    public function Materials()
+    public function Materials(): BelongsToMany
     {
-        return $this->belongsToMany(Customer::class, 'customer_id');
+        return $this->belongsToMany(Material::class);
     }
 
 

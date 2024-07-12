@@ -35,7 +35,7 @@ class MaterialController extends Controller
     }
 
      //controle para mostrar material
-    /* public function show($id)
+     public function show($id)
      {
          //opção 1 -> Permite buscar determinado ID de usuario
         //$user = User::where ('id',$id) ->first();
@@ -45,11 +45,11 @@ class MaterialController extends Controller
             return redirect() -> route('materials.index');*/
 
         //opção 3
-       // $material = Material::find($id);
+        $material = Material::find($id);
 
          //se for passado um ID de um material valido, direciona para a tela de edição de usuario
-      //   return view('admin.materials.show', compact('material'));
-   //  }
+         return view('admin.materials.show', compact('material'));
+     }
 
     //Função que direcionar a pagina de criação de usuario
     public function create()
@@ -85,7 +85,7 @@ class MaterialController extends Controller
 
     }
 
-     //Editando um Material
+    //Editando um Material
     public function edit($id)
       {
           if (!$material= Material::find($id))
@@ -94,7 +94,7 @@ class MaterialController extends Controller
           return view('admin.materials.edit', compact('material'));
       }
 
-      //Atualizando os registros de um usuario
+    //Atualizando os registros de um material
     public function update(Request $request, $id)
     {
         if(!$material = Material::find($id))
@@ -107,7 +107,7 @@ class MaterialController extends Controller
         return redirect() -> route('admin.materials.index')->with('msg', 'Material atualizado com sucesso!');
     }
 
-    //Excluindo Material do banco de dados
+    //Excluindo registros de material
     public function destroy($id)
     {
         if(!$material= Material::findOrFail($id))
@@ -116,14 +116,8 @@ class MaterialController extends Controller
         $material->delete();
 
         return redirect()->route('admin.materials.index');
-    }
+   }
 
-    public function loanCustomer(){
-        dd($customer = Customer::find(1));
-
-        //return view ('admin.loans.index', compact('customer'));
-
-    }
 
 
 

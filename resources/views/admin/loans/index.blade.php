@@ -39,7 +39,7 @@
                     <th scope="col">status</th>
                 </tr>
             </thead>
-            @foreach ($materials as $material)
+            @foreach ($customers->materials as $material)
             <tr>
                 <td> {{ $material->id }} </td>
                 <td> {{ $material->material->name }} </td>
