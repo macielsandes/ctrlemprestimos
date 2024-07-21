@@ -31,7 +31,7 @@
     <div class="row">
         <div class="col">
             <label for="password" class="form-label">Senha:</label>
-            <input class="form-control" type="password" name="password" id="password">
+            <input class="form-control" type="password" name="password">
         </div>
         <div class="row">
             <div class="col">

@@ -4,16 +4,6 @@
 
 @section('content')
 
-  <!--Remover esta DIV e deixar apenas o yield-->
-  <div class="container-fluid">
-    <div class="row">
-        @if (session('msg'))
-            <p class="msg alert alert-success"> {{ session('msg') }}</p>
-        @endif   
-        <p class="msg alert alert-success">Erro </p>
-        <div>
-    </div>   
-
 
 <div class="container-fluid border p-3 mt-10">
         <div class="container-fluid bg-light border p-4 rounded text-center">
@@ -42,13 +32,13 @@
 
     <!--Inicio da Tabela-->
     <div class="p-3 table-responsive">
-        <table class="table table-bordered">        
+        <table class="table table-bordered">
             <thead class="table-dark">
                 <tr>
                     <th scope="col">Id</th>
                     <th scope="col">foto</th>
                     <th scope="col">Nome</th>
-                    <th scope="col">Descrição</th>                    
+                    <th scope="col">Descrição</th>
                     <th scope="col">Ação</th>
                 </tr>
             </thead>
@@ -56,13 +46,13 @@
                 @foreach ($materials as $material)
                     <tr>
                         <th scope="row">{{ $material->id }}</th>
-                        <td><img src="img/materials/{{$material->image }}" class="img-responsive" 
-                            style="max-height:50px; max-width:50px" alt="" srcset=""> 
+                        <td><img src="img/materials/{{$material->image }}" class="img-responsive"
+                            style="max-height:50px; max-width:50px" alt="" srcset="">
                         </td>
                         <td> {{ $material->name }} </td>
                         <td> {{ $material->description }} </td>
-                        
-                        <td><a class="btn btn-danger" href="{{ route('materials.edit', $material->id) }}">Editar</a> 
+
+                        <td><a class="btn btn-danger" href="{{ route('materials.edit', $material->id) }}">Editar</a>
                             <a class="btn btn-primary" href="{{ route('materials.show', $material->id) }}">Remover</a> </td>
                     </tr>
                 @endforeach

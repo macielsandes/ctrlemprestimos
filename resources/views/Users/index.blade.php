@@ -2,17 +2,6 @@
 
 @section('title', 'Listagem dos Usuários')
 
- <!--Remover esta DIV e deixar apenas o yield-->
-    @if (session('msg'))
-        <div class="container-fluid">
-            <div class="row">
-            <p class="msg alert alert-success"> {{ session('msg') }}</p>
-        </div>
-        @endif
-        <p class="msg alert alert-success">Erro </p>
-        <div>
-    </div>
-
 @section('content')
     <div class="container-fluid p-3 mt-10 bg-light border p-4 rounded">
         <div class="row">

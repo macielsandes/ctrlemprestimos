@@ -35,7 +35,7 @@ class DevolutionController extends Controller{
   //carrega formulario de deloução de emprestimo
   public function edit($id)
   {
-    $loans = Loan::all();
+    //$loans = Loan::all();
 
     if($loans = Loan::find($id))
       return redirect()->route('devolutions.index');

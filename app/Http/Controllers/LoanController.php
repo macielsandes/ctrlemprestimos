@@ -35,9 +35,9 @@ class LoanController extends Controller
     public function devolution()
     {
         //recupera materiais cadastrados
-        $loans = Loan::all();
+       // $loans = Loan::all();
 
-        return view('loans.devolution', compact('loans'));
+        return view('loans.devolution');
     }
 
     /* public function create()
