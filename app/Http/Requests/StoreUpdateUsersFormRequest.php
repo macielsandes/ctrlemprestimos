@@ -23,19 +23,21 @@ class StoreUpdateUsersFormRequest extends FormRequest
     {
        //Informa que quando o usuario esta verificando com seu propria ID de usuario, não é necessario efetuar validação do campo Nome
        $id = $this->id ??'';
-        
+
        //Regra que faz a validação dos dados antes de efetuar a inseção no banco de dados
        $rules = [
-               'name' => 'required|string|max:255|min:3',
+               'firstname' => 'required|string|max:255|min:3',
+               'lastname' => 'required|string|max:255|min:3',
+               'username' => 'required|string|max:255|min:3',
                'email' => [
-                   'required',
-                   'email',
-                   "unique:users,email,{$id},id",
+                'required',
+                'email',
+                'unique:users',
                ],
                'password' => [
                   'required',
                   'min:8',
-                  'max:15',
+                  'max:20',
                ]
            ];
 
@@ -49,5 +51,5 @@ class StoreUpdateUsersFormRequest extends FormRequest
        }
        return $rules;
   }
-    
+
 }

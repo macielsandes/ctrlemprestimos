@@ -26,6 +26,8 @@ cp .env.exemplo .env
 ``` 
 No arquivo .env configurar o base de dados para o nome desejado. Exemplo: DB_DATABASE=ctrlemprestimos
 
+Ao criar o banco de dados usar formato "utf8mb4_unicode_ci"
+
 Gerar a chave de configuração
 ```
 php artisan key:generate

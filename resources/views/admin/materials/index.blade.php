@@ -16,8 +16,8 @@
 
 
 <div class="container-fluid border p-3 mt-10">
-        <div class="container-fluid bg-light border p-4 rounded text-center">
-            <h1>Listagem de Materiais</h1>
+        <div class="container-fluid bg-light border p-4 rounded">
+            <h1>Materiais</h1>
         </div>
     </div>
 

@@ -3,13 +3,28 @@
 @section('title', 'Cadastrar novo usuário')
 
 @section('content')
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col">
-                <h1>Cadastro de novo usuário</h1>
-            </div>
+
+<!--Remover esta DIV e deixar apenas o yield-->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <h1>Novo usuário</h1>
         </div>
     </div>
+</div>
+
+<!--Será mostrado erro caso não preenchido algum dado do cadastro-->
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error )
+                        <li class="eror">{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
+
     <form action="{{ route('users.store') }}" method="post">
         @csrf
         @include('admin.users._partials.form')

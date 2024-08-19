@@ -1,5 +1,5 @@
 @csrf
-<!--Forms de usuario-->
+<!--Forms de cliente-->
 <div class="container-fluid">
     <div class="row">
         <div class="col">

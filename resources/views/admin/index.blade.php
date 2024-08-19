@@ -4,8 +4,8 @@
 
 @section('content')
 
-    <div class="container-fluid p-3 mt-10">
-        <div class="row bg-light border p-4 rounded">
+    <div class="container-fluid p-3 border mt-10">
+        <div class="row container-fluid bg-light border p-4 rounded">
             <div class="col">
                 <h1>Home</h1>
             </div>

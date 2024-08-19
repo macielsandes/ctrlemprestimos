@@ -4,8 +4,8 @@
 
 @section('content')
     <div class="container-fluid border p-3 mt-10">
-        <div class="container-fluid bg-light border p-4 rounded text-center">
-            <h1>Listagem de clientes</h1>
+        <div class="container-fluid bg-light border p-4 rounded">
+            <h1>Clientes</h1>
         </div>
     </div>
 
@@ -25,7 +25,7 @@
         </div>
     </div>
 
-    <div class="table-responsive">
+     <div>
         <table class="table table-bordered table-striped table-hover">
             <thead class="table-dark table-striped">
                 <tr>
@@ -36,7 +36,6 @@
                     <th scope="col">Ações</th>
                 </tr>
             </thead>
-
             <tbody>
                 @foreach ($customers as $customer)
                     <tr>

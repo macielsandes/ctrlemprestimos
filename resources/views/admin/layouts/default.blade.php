@@ -20,32 +20,34 @@
     <!--Meu CSS do projeto-->
     <!--<link rel="stylesheet" href="/js">-->
 
-
     <title>CTRL Empréstimos - @yield('title') </title>
 </head>
 
 <body>
-    <header>
-        @include('admin.layouts._partials.topo')
-    </header>
+    <div class="container-fluid">
+        <!--Conteudo menu da pagina-->
+        <header>
+            @include('admin.layouts._partials.topo')
+        </header>
 
-    <!--Conteudo-->
-    <main>
-        @yield('content')
-    </main>
+        <!--Conteudo da pagina-->
+        <main>
+            @yield('content')
+        </main>
 
-    <footer>
-        <div class="container text-center">
-            <div class="row">
-                <div class="col">
-                    <div class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-                        <p class="col py-3 my-4 text-muted"> CTRL Empréstimos; {{ date('Y') }}</p>
+        <footer>
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col">
+                        <div class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+                            <p class="col py-3 my-4 text-muted"> CTRL Empréstimos; {{ date('Y') }}</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </footer>
-
+        </footer>
+    </div>
+    <!-- container-scroller -->
     <!-- Js Bootstrap-->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
