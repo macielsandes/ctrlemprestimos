@@ -56,7 +56,9 @@ class UserController extends Controller
         $data = $request->all();
         $data['password'] = bcrypt($request->password);
 
+        //Persiste os dados
         User::create($data);
+
         return redirect()-> route('users.index')->with('msg', 'Usuário cadastrado com sucesso!');
     }
 
@@ -75,7 +77,7 @@ class UserController extends Controller
         if(!$user = User::find($id))
            return redirect()-> route('admin.users.index');
 
-        $data = $request->only('name', 'email');
+        $data = $request->only('firstname', 'lastname', 'username', 'e-mail');
         if ($request->password)
             $data['password'] = bcrypt($request->password);
 

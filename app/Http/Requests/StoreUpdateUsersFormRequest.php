@@ -24,7 +24,7 @@ class StoreUpdateUsersFormRequest extends FormRequest
        //Informa que quando o usuario esta verificando com seu propria ID de usuario, não é necessario efetuar validação do campo Nome
        $id = $this->id ??'';
 
-       //Regra que faz a validação dos dados antes de efetuar a inseção no banco de dados
+       //Verifica se requisitos do formulario foram atendimentos antes de salvar no banco de dados
        $rules = [
                'firstname' => 'required|string|max:255|min:3',
                'lastname' => 'required|string|max:255|min:3',
@@ -41,15 +41,26 @@ class StoreUpdateUsersFormRequest extends FormRequest
                ]
            ];
 
-       //Verifica se esta sendo efetuado uma edição de dados do do campo password e não obriga a informação do campo senha
-       if ($this-> method('PUT')){
-           $rules['password'] = [
-               'nullable',
-               'min:8',
-               'max:15',
-           ];
+             //Verifica se esta sendo efetuado uma edição de dados do do campo password e não obriga a informação do campo senha
+             if ($this-> method('PUT')){
+                $rules['password'] = [
+                    'nullable',
+                    'min:8',
+                    'max:15',
+                ];
+            }
+            return $rules;
        }
-       return $rules;
-  }
+
+        public function messages(): array
+        {
+            return [
+                'firstname.required' => 'O campo Nome é de preenchimento obrigatório',
+                'lastname.required' => 'O campo Sobrenome é de preenchimento obrigatório',
+                'username.required' => 'O campo Username é de preenchimento obrigatório',
+                'emai.required' => 'O campo E-mail é de preenchimento obrigatório',
+                'password.required' => 'O campo Senha é de preenchimento obrigatório',
+        ];
+        }
 
 }

@@ -12,13 +12,12 @@
         </div>
     </div>
 </div>
-
-<!--Será mostrado erro caso não preenchido algum dado do cadastro-->
+<!--Será mostrado mensagem de erro caso algum campo não seja preenchido corretamente-->
         @if ($errors->any())
             <div class="alert alert-danger">
                 <ul>
                     @foreach ($errors->all() as $error )
-                        <li class="eror">{{ $error }}</li>
+                        <li class="error">{{ $error }}</li>
                     @endforeach
                 </ul>
             </div>

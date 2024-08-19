@@ -11,6 +11,13 @@
         </div>
     </div>
 
+    <!--Será mostrado uma mensagem informando que usuário foi salvo-->
+    @if (session('msg'))
+        <div class="alert alert-success">
+            <p class="msg"> {{ session('msg') }}</p>
+        </div>
+    @endif
+
     <div class="row p-3 d-flex bd-highlight">
         <!--Botao para cadastro de novo usuario-->
         <div class="col-6">

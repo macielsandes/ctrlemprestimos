@@ -40,7 +40,6 @@ Route::prefix('/admin')-> group(function(){
     Route::post('/material', [MaterialController::class, 'store'])-> name('materials.store');
     Route::get('/material/{id}', [MaterialController::class, 'show'])-> name('materials.show');
 
-
     Route::delete('/customer/{id}',[CustomerController::class, 'destroy']) -> name('customers.destroy');
     Route::put('/customer/{id}',[CustomerController::class, 'update']) -> name('customers.update');
     Route::get('/customer/{id}/edit',[CustomerController::class, 'edit']) -> name('customers.edit');
