@@ -18,7 +18,7 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'firstname', 'lastname', 'username', 'email', 'password',
+        'firstname', 'lastname', 'username', 'email', 'status','password',
     ];
 
     /**
@@ -40,7 +40,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
-    
+
     // modelo da classe user
     public function getUsers(string|null $search = null)
     {
@@ -49,10 +49,10 @@ class User extends Authenticatable
                 $query->where('username', $search);
                 $query->orwhere('firstname', 'LIKE', "%{$search}%");
             }
-        })->get();    
+        })->get();
 
         return $user;
-    }  
+    }
     // Este metodo permite concatenar o nome
     /**
      * @return string

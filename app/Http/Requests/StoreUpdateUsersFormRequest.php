@@ -27,18 +27,11 @@ class StoreUpdateUsersFormRequest extends FormRequest
        //Verifica se requisitos do formulario foram atendimentos antes de salvar no banco de dados
        $rules = [
                'firstname' => 'required|string|max:255|min:3',
-               'lastname' => 'required|string|max:255|min:3',
-               'username' => 'required|string|max:255|min:3',
-               'email' => [
-                'required',
-                'email',
-                'unique:users',
-               ],
-               'password' => [
-                  'required',
-                  'min:8',
-                  'max:20',
-               ]
+               'lastname' => 'required|string|max:255',
+               'username' => 'required|string|max:325|min:3',
+               'email' => [ 'required', 'email', 'unique:users' ],
+               'password' => [ 'required', 'min:6', 'confirmed'],
+               'password_confirmation' => ['required', 'min:6' ],
            ];
 
              //Verifica se esta sendo efetuado uma edição de dados do do campo password e não obriga a informação do campo senha

@@ -25,11 +25,12 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 Route::prefix('/admin')-> group(function(){
     Route::delete('/users/{id}',[UserController::class, 'destroy']) -> name('users.destroy');
     Route::put('/user/{id}',[UserController::class, 'update']) -> name('users.update');
-    Route::get('/user/{id}/edit',[UserController::class, 'edit']) -> name('users.edit');
+    Route::get('/user/{id}',[UserController::class, 'disabledStatus']) -> name('user.disabled');
+    Route::get('/user/{id}/edit',[UserController::class, 'edit']) -> name('user.edit');
     Route::get('/users', [UserController::class, 'index'])-> name('users.index');
     Route::get('/users/create', [UserController::class, 'create']) -> name('users.create');
     Route::post('/users', [UserController::class, 'store']) -> name('users.store');
-    Route::get('/users/{id}', [UserController::class, 'show'])-> name('users.show');
+    Route::get('/users/{id}', [UserController::class, 'show'])-> name('user.show');
 
     Route::get('/material/loanlist', [MaterialController::class, 'loanCustomer'])-> name('material.loans');
     Route::delete('/material{id}',[MaterialController::class, 'destroy']) -> name('materials.destroy');

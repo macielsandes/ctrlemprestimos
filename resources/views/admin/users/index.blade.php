@@ -3,13 +3,6 @@
 @section('title', 'Usuários')
 
 @section('content')
-    <div class="container-fluid p-3 border mt-10">
-        <div class="row container-fluid bg-light border p-4 rounded">
-            <div class="col">
-                <h1>Usuários</h1>
-            </div>
-        </div>
-    </div>
 
     <!--Será mostrado uma mensagem informando que usuário foi salvo-->
     @if (session('msg'))
@@ -17,6 +10,14 @@
             <p class="msg"> {{ session('msg') }}</p>
         </div>
     @endif
+
+    <div class="container-fluid p-3 border mt-10">
+        <div class="row container-fluid bg-light border p-4 rounded">
+            <div class="col">
+                <h1>Usuários</h1>
+            </div>
+        </div>
+    </div>
 
     <div class="row p-3 d-flex bd-highlight">
         <!--Botao para cadastro de novo usuario-->
@@ -26,8 +27,8 @@
         <!--Div da barra de pesquisa-->
         <div class="col-6">
             <form class="d-flex ms-auto p-2 bd-highlight" action="{{ route('users.index') }}" method="GET">
-                <input class="form-control" type="text" id="search" name="search"
-                    placeholder="Pesquisar" aria-label="Pesquisar">
+                <input class="form-control" type="text" id="search" name="search" placeholder="Pesquisar"
+                    aria-label="Pesquisar">
                 <button class="btn btn-outline-success" type="submit">Pesquisar</button>
             </form>
         </div>
@@ -52,10 +53,16 @@
                         <td> {{ $user->firstname }}</td>
                         <td> {{ $user->username }}</td>
                         <td> {{ $user->email }}</td>
-                        <td> </td>
                         <td>
-                            <a class="btn btn-danger" href="{{ route('users.show', $user->id) }}" role="button">Remover</a>
-                            <a class="btn btn-primary" href="{{ route('users.edit', $user->id) }}" role="button">Editar</a>
+                            <a class="btn btn-{{ $user->status ? 'success' : 'danger' }}">
+                                {{ $user->status ? 'Ativo' : 'Desabilitado' }}
+                            </a>
+
+                        <td>
+                            <a class="btn btn-danger" href="{{ route('user.show', $user->id) }}" role="button">Remover</a>
+                            <a class="btn btn-primary" href="{{ route('user.edit', $user->id) }}" role="button">Editar</a>
+                            <a class="btn btn-secondary" href="{{ route('user.disabled', $user->id) }}"
+                                role="button">Alterar Situação</a>
                         </td>
                     </tr>
                 @endforeach

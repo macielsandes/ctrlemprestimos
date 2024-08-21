@@ -4,18 +4,14 @@
 
 @section('content')
 
-  <!--Remover esta DIV e deixar apenas o yield-->
-  <div class="container-fluid">
-    <div class="row">
-        @if (session('msg'))
-            <p class="msg alert alert-success"> {{ session('msg') }}</p>
-        @endif
-            <p class="msg alert alert-success">Erro </p>
+    <!--Será mostrado uma mensagem informando que material foi salvo-->
+    @if (session('msg'))
+        <div class="alert alert-success">
+            <p class="msg"> {{ session('msg') }}</p>
         <div>
-    </div>
+    @endif
 
-
-<div class="container-fluid border p-3 mt-10">
+    <div class="container-fluid border p-3 mt-10">
         <div class="container-fluid bg-light border p-4 rounded">
             <h1>Materiais</h1>
         </div>
@@ -56,14 +52,14 @@
                 @foreach ($materials as $material)
                     <tr>
                         <th scope="row">{{ $material->id }}</th>
-                        <td><img src="img/materials/{{$material->image }}" class="img-responsive"
-                            style="max-height:50px; max-width:50px" alt="" srcset="">
+                        <td><img src="img/materials/{{ $material->image }}" class="img-responsive"
+                                style="max-height:50px; max-width:50px" alt="" srcset="">
                         </td>
                         <td> {{ $material->name }} </td>
                         <td> {{ $material->description }} </td>
-
                         <td><a class="btn btn-danger" href="{{ route('materials.edit', $material->id) }}">Editar</a>
-                            <a class="btn btn-primary" href="{{ route('materials.show', $material->id) }}">Remover</a> </td>
+                            <a class="btn btn-primary" href="{{ route('materials.show', $material->id) }}">Remover</a>
+                        </td>
                     </tr>
                 @endforeach
             </tbody>

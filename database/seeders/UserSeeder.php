@@ -13,30 +13,53 @@ class UserSeeder extends Seeder
      */
     //Cria usuarios no banco de dados
     public function run(): void
-    {             
+    {
         User::create([
             'firstname' => 'administrador',
             'lastname' => '',
             'username' => 'admin',
-            'email' => "admin@localhost.com",           
+            'email' => "admin@localhost.com",
+            'status' => "1",
             'password' => bcrypt('12345678'),
+
         ]);
-    
+
          User::create([
             'firstName' => 'Atendente',
             'lastName' => '',
             'username'=> 'atendente1',
-            'email' => "atendente1@gmail.com",           
+            'email' => "atendente1@gmail.com",
+            'status' => "1",
             'password' => bcrypt('12345678'),
-        ]);     
-        
+        ]);
+
         User::create([
             'firstName' => 'Atendente2',
             'lastName' => '',
             'username'=> 'atendente2',
-            'email' => "atendente2@gmail.com",           
+            'email' => "atendente2@gmail.com",
+            'status' => "1",
             'password' => bcrypt('12345678'),
-        ]);        
-    
+        ]);
+
+        User::create([
+            'firstName' => 'Marcos',
+            'lastName' => 'Oliveira',
+            'username'=> 'marcos.oliveira',
+            'email' => "marcos.oliveira@gmail.com",
+            'status' => "0",
+            'password' => bcrypt('12345678'),
+        ]);
+
+        User::create([
+            'firstName' => 'Marcela',
+            'lastName' => 'Oliveira',
+            'username'=> 'marcela.oliveira',
+            'email' => "marcela.oliveira@gmail.com",
+            'status' => "1",
+            'password' => bcrypt('12345678'),
+        ]);
+
+
     }
 }

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('lastname');
             $table->string('username');
             $table->string('email')->unique();
-            $table->boolean('status');
+            $table->integer('status')->default(1); // 0:desativado, 1: Ativado
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();

@@ -30,12 +30,12 @@
     <div class="row">
         <div class="col">
             <label for="password" class="form-label">Senha:</label>
-            <input class="form-control" placeholder="Digite a senha" type="password" name="password">
+            <input class="form-control" placeholder="Digite a senha" type="password" name="password" id="password">
         </div>
         <div class="row">
             <div class="col">
             <label for="password" class="form-label">Repeta senha:</label>
-            <input class="form-control" placeholder="Repita a senha" type="password" name="password" id="password">
+            <input class="form-control" placeholder="Repita a senha" type="password" name="password_confirmation" id="password_confirmation">
             </div>
         </div>
     </div>
