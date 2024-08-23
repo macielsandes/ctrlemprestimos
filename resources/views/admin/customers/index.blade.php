@@ -33,6 +33,7 @@
                     <th scope="col">Nome Completo</th>
                     <th scope="col">Nome de usuário</th>
                     <th scope="col">E-mail</th>
+                    <th scope="col">Status</th>
                     <th scope="col">Ações</th>
                 </tr>
             </thead>
@@ -43,6 +44,11 @@
                         <td> {{ $customer->firstname }} {{ $customer->lastname }}</td>
                         <td> {{ $customer->username }}</td>
                         <td> {{ $customer->email }}</td>
+                        <td>
+                            <a class="btn btn-{{ $customer->status ? 'success' : 'danger' }}">
+                                {{ $customer->status ? 'Ativo' : 'Desabilitado' }}
+                            </a>
+                        </td>
                         <td>
                             <a class="btn btn-danger" href="{{ route('customers.show', $customer->id) }}"
                                 role="button">Remover</a>

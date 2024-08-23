@@ -23,7 +23,6 @@
             </div>
         @endif
 
-
     <form action="{{ route('users.store') }}" method="post">
         @csrf
         @include('admin.users._partials.form')

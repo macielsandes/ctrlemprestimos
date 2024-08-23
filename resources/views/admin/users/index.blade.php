@@ -39,7 +39,7 @@
             <thead class="table-dark">
                 <tr>
                     <th scope="row">ID</th>
-                    <th scope="col">Nome</th>
+                    <th scope="col">Nome Completo</th>
                     <th scope="col">username</th>
                     <th scope="col">E-mail</th>
                     <th scope="col">Status</th>
@@ -50,19 +50,19 @@
                 @foreach ($users as $user)
                     <tr>
                         <td> {{ $user->id }}</td>
-                        <td> {{ $user->firstname }}</td>
+                        <td> {{ $user->firstname }} {{ $user->lastname}}</td>
                         <td> {{ $user->username }}</td>
                         <td> {{ $user->email }}</td>
                         <td>
                             <a class="btn btn-{{ $user->status ? 'success' : 'danger' }}">
                                 {{ $user->status ? 'Ativo' : 'Desabilitado' }}
                             </a>
-
+                        </td>
                         <td>
                             <a class="btn btn-danger" href="{{ route('user.show', $user->id) }}" role="button">Remover</a>
                             <a class="btn btn-primary" href="{{ route('user.edit', $user->id) }}" role="button">Editar</a>
                             <a class="btn btn-secondary" href="{{ route('user.disabled', $user->id) }}"
-                                role="button">Alterar Situação</a>
+                                role="button">Situação</a>
                         </td>
                     </tr>
                 @endforeach

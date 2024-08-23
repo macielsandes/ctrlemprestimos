@@ -45,7 +45,9 @@ class CustomerController extends Controller
     public function store(Request $request)
     {
         $customer = new Customer();
+        $customer ['status']= 1;
 
+        //Persiste os dados
         $customer->create($request->all());
 
         return redirect()-> route ('customers.index');

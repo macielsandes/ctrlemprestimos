@@ -56,6 +56,7 @@ class UserController extends Controller
         $data = $request->all();
         $data['password'] = bcrypt($request->password);
         $data ['status']= 1;
+
         //Persiste os dados
         User::create($data);
 

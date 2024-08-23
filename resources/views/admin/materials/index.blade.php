@@ -41,8 +41,7 @@
         <table class="table table-bordered">
             <thead class="table-dark">
                 <tr>
-                    <th scope="col">Id</th>
-                    <th scope="col">foto</th>
+                    <th scope="col">Foto</th>
                     <th scope="col">Nome</th>
                     <th scope="col">Descrição</th>
                     <th scope="col">Ação</th>
@@ -51,7 +50,6 @@
             <tbody>
                 @foreach ($materials as $material)
                     <tr>
-                        <th scope="row">{{ $material->id }}</th>
                         <td><img src="img/materials/{{ $material->image }}" class="img-responsive"
                                 style="max-height:50px; max-width:50px" alt="" srcset="">
                         </td>
