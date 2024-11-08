@@ -4,6 +4,7 @@
 
 @section('content')
 
+<div class="container-fluid">
     <!--Será mostrado uma mensagem informando que usuário foi salvo-->
     @if (session('msg'))
         <div class="alert alert-success">
@@ -79,4 +80,5 @@
             </ul>
         </div>
     </div>
+</div>
 @endsection

@@ -3,7 +3,6 @@
 @section('title', 'Empréstimo')
 
 @section('content')
-
     <div class="container-fluid border p-3 mt-10">
         <div class="row">
             <div class="col">
@@ -13,6 +12,7 @@
             </div>
         </div>
     </div>
+
 </div class="card-body">
     <form action="{{ route('loans.store') }}" method="post">
         @csrf

@@ -4,9 +4,9 @@
 
 @section('content')
 
-    <div class="container-fluid p-3 border mt-10">
-        <div class="row container-fluid bg-light border p-4 rounded">
-            <div class="col">
+    <div class="col container-fluid p-2 border mt-10">
+        <div class=" bg-light border p-4 rounded">
+            <div class="row">
                 <h1>Home</h1>
             </div>
         </div>
@@ -28,11 +28,9 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+
 
     <div class="container mt-1">
-        <div class="row">
             <div class="col-lg-5 col-sm-4">
                 <div class="card  mb-2">
                     <div class="card-header p-3 pt-2">
@@ -49,6 +47,7 @@
             </div>
         </div>
     </div>
+
 
     <div class="container mt-1">
         <div class="row">
@@ -68,8 +67,5 @@
             </div>
         </div>
     </div>
-
-
-
 
 @endsection

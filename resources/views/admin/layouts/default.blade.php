@@ -15,7 +15,6 @@
 
     <!--Meu CSS do projeto-->
     <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="/css/headers.css">
 
     <!--Meu CSS do projeto-->
     <!--<link rel="stylesheet" href="/js">-->
@@ -24,30 +23,16 @@
 </head>
 
 <body>
-    <div class="container-fluid">
-        <!--Conteudo menu da pagina-->
-        <header>
-            @include('admin.layouts._partials.topo')
-        </header>
+    <!--Inclue topo da pagina-->
+    @include('admin.layouts._partials.topo')
 
-        <!--Conteudo da pagina-->
-        <main>
-            @yield('content')
-        </main>
+    <!--Conteudo da principal pagina-->
+    <main class="row">
+        @yield('content')
+    </main>
+    <!--Inclue rodape da pagina -->
+    @include('admin.layouts._partials.inferior')
 
-        <footer>
-            <div class="container text-center">
-                <div class="row">
-                    <div class="col">
-                        <div class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-                            <p class="col py-3 my-4 text-muted"> CTRL Empréstimos; {{ date('Y') }}</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
-    </div>
-    <!-- container-scroller -->
     <!-- Js Bootstrap-->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
@@ -55,7 +40,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
         integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous">
     </script>
-
+    </main>
 </body>
 
 </html>
